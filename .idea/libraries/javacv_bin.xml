@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="javacv-bin">
+    <CLASSES>
+      <root url="file://E:/MASTER/an2/disertatie/opencv/javacv-bin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://E:/MASTER/an2/disertatie/opencv/javacv-bin/samples" />
+    </SOURCES>
+    <jarDirectory url="file://E:/MASTER/an2/disertatie/opencv/javacv-bin" recursive="false" />
+  </library>
+</component>

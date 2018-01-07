@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="artoolkitplus">
+    <CLASSES>
+      <root url="jar://E:/MASTER/an2/disertatie/opencv/javacv-bin/artoolkitplus.jar!/" />
+      <root url="jar://E:/MASTER/an2/disertatie/opencv/javacv-bin/ffmpeg.jar!/" />
+      <root url="jar://E:/MASTER/an2/disertatie/opencv/javacv-bin/flandmark.jar!/" />
+      <root url="jar://E:/MASTER/an2/disertatie/opencv/javacv-bin/flycapture.jar!/" />
+      <root url="jar://E:/MASTER/an2/disertatie/opencv/javacv-bin/javacpp.jar!/" />
+      <root url="jar://E:/MASTER/an2/disertatie/opencv/javacv-bin/javacv.jar!/" />
+      <root url="jar://E:/MASTER/an2/disertatie/opencv/javacv-bin/libdc1394.jar!/" />
+      <root url="jar://E:/MASTER/an2/disertatie/opencv/javacv-bin/libfreenect.jar!/" />
+      <root url="jar://E:/MASTER/an2/disertatie/opencv/javacv-bin/librealsense.jar!/" />
+      <root url="jar://E:/MASTER/an2/disertatie/opencv/javacv-bin/opencv.jar!/" />
+      <root url="jar://E:/MASTER/an2/disertatie/opencv/javacv-bin/videoinput.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
