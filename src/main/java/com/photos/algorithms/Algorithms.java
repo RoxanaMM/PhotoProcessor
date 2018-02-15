@@ -1,3 +1,5 @@
+package com.photos.algorithms;
+
 import static java.lang.Math.*;
 import static java.lang.Float.*;
 import static java.lang.Math.log10;
@@ -7,14 +9,15 @@ import static java.lang.Math.log10;
  */
 public class Algorithms {
 
-    public float euclidianL2(float P[],float Q[]){
+    static float[] R = new float[1228800];
+    public static float euclidianL2(float P[], float Q[]){
         float dEuc = 0;
         for(int i=0;i<P.length;i++){
             dEuc= (float) sqrt(sum(dEuc, (float) pow(abs(P[i]-Q[i]),2)));
         }
         return dEuc;
     }
-    public double cityBlockL1(float P[],float Q[]){
+    public static double cityBlockL1(float P[],float Q[]){
         float dCB = 0;
         for(int i=0;i<P.length;i++){
             dCB=sum(dCB,abs(P[i]) - abs(Q[i]));
@@ -22,7 +25,7 @@ public class Algorithms {
         return dCB;
     }
 
-    public double minkowskiLp(float P[],float Q[], int p){
+    public static double minkowskiLp(float P[],float Q[], int p){
         float dMk = 0;
         for(int i=0;i<P.length;i++){
             dMk= (float) sqrt(sum(dMk, (float) pow(abs(P[i]-Q[i]),2)));
@@ -31,7 +34,7 @@ public class Algorithms {
     }
 
 
-    public double cebyshevLinf(float P[],float Q[]){
+    public static double cebyshevLinf(float P[],float Q[]){
         float dChev = 0, dChevMax= dChev;
         for(int i=0;i<P.length;i++){
             dChev= (float) sqrt(sum(dChev, (float) pow(abs(P[i]-Q[i]),2)));
@@ -41,7 +44,7 @@ public class Algorithms {
         return dChevMax;
     }
 
-    public double sorensen(float P[],float Q[]){
+    public static double sorensen(float P[],float Q[]){
         float dSor = 0,numarator = 0, numitor = 0;
         for(int i=0;i<P.length;i++){
              numarator =(float) sum(numarator, (float) (abs(P[i]-Q[i])));
@@ -53,7 +56,7 @@ public class Algorithms {
         return dSor;
     }
 
-    public double gower(float P[],float Q[], float R[]){
+    public static double gower(float P[],float Q[], float R[]){
         float dGow = 0, numarator=0, numitor =0;
         for(int i=0;i<P.length;i++){
             numarator =(float) sum(numarator, (float) (abs(P[i]-Q[i])));
@@ -65,7 +68,7 @@ public class Algorithms {
         return dGow;
     }
 
-    public double soergel(float P[],float Q[]){
+    public static double soergel(float P[],float Q[]){
         float dSg = 0, numarator=0, numitor =0;
         for(int i=0;i<P.length;i++) {
             numarator = (float) sum(numarator, (float) (abs(P[i] - Q[i])));
@@ -77,7 +80,7 @@ public class Algorithms {
         return dSg;
     }
 
-    public double kulczynskid(float P[],float Q[]){
+    public static double kulczynskid(float P[],float Q[]){
         float dKul = 0, numarator=0, numitor =0;
         for(int i=0;i<P.length;i++) {
             numarator = (float) sum(numarator, (float) (abs(P[i] - Q[i])));
@@ -90,7 +93,7 @@ public class Algorithms {
     }
 
 
-    public double canberra(float P[],float Q[]){
+    public static double canberra(float P[],float Q[]){
         float dCan = 0, numarator=0, numitor =0;
         for(int i=0;i<P.length;i++) {
             numarator = (float) sqrt(sum(numarator, (float) (abs(P[i] - Q[i]))));
@@ -102,7 +105,7 @@ public class Algorithms {
         return dCan;
     }
 
-    public double lorentzian(float P[],float Q[]){
+    public static double lorentzian(float P[],float Q[]){
         float dLor= 0;
         for(int i=0;i<P.length;i++) {
             dLor = (float) sum(dLor, (float) Math.log10(1+abs(P[i] - Q[i])));
@@ -110,7 +113,7 @@ public class Algorithms {
         return dLor;
     }
 
-    public double intersection(float P[],float Q[]){
+    public static double intersection(float P[],float Q[]){
         float sIS= 0;
         for(int i=0;i<P.length;i++) {
             sIS = (float) sum(sIS, Float.min(P[i],Q[i]));
@@ -118,7 +121,7 @@ public class Algorithms {
         return sIS;
     }
 
-    public double waveHedges(float P[],float Q[]){
+    public static double waveHedges(float P[],float Q[]){
         float dWH = 0, numarator=0, numitor =0, suma = 0;
         for(int i=0;i<P.length;i++) {
             numarator = Float.min(P[i],Q[i]);
@@ -129,7 +132,7 @@ public class Algorithms {
         return dWH;
     }
 
-    public double similarityCzekanowski(float P[],float Q[]){
+    public static double similarityCzekanowski(float P[],float Q[]){
         float sCze = 0, numarator=0, numitor =0, suma = 0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = 2* sum(numarator , Float.min(P[i],Q[i]));
@@ -140,11 +143,11 @@ public class Algorithms {
         return sCze;
     }
 
-    public double distanceCzekanowski(float P[],float Q[]) {
+    public static double distanceCzekanowski(float P[],float Q[]) {
         return 1-similarityCzekanowski(P,Q);
     }
 
-    public double similarityMotyka(float P[],float Q[]){
+    public static double similarityMotyka(float P[],float Q[]){
         float sMot = 0, numarator=0, numitor =0, suma = 0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = sum(numarator , Float.min(P[i],Q[i]));
@@ -155,11 +158,11 @@ public class Algorithms {
         return sMot;
     }
 
-    public double distanceMotyka(float P[],float Q[]) {
+    public static double distanceMotyka(float P[],float Q[]) {
         return 1-similarityMotyka(P,Q);
     }
 
-    public double similarityKulczynkyS(float P[],float Q[]){
+    public static double similarityKulczynkyS(float P[],float Q[]){
         float sKul = 0, numarator=0, numitor =0, suma = 0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = sum(numarator , Float.min(P[i],Q[i]));
@@ -170,11 +173,11 @@ public class Algorithms {
         return sKul;
     }
 
-    public double distanceKulczynkyS(float P[],float Q[]) {
+    public static double distanceKulczynkyS(float P[],float Q[]) {
         return 1/similarityKulczynkyS(P,Q);
     }
 
-    public double ruzicka(float P[],float Q[]){
+    public static double ruzicka(float P[],float Q[]){
         float sRuz = 0, numarator=0, numitor =0, suma = 0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = sum(numarator , Float.min(P[i],Q[i]));
@@ -185,7 +188,7 @@ public class Algorithms {
         return sRuz;
     }
 
-    public double tanimoto(float P[],float Q[]){
+    public static double tanimoto(float P[],float Q[]){
         float sRuz = 0, numarator=0, numitor =0, suma = 0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = sum(numarator , (Float.max(P[i],Q[i]) - Float.min(P[i],Q[i])));
@@ -196,7 +199,7 @@ public class Algorithms {
         return sRuz;
     }
 
-    public double innerProduct(float P[],float Q[]){
+    public static double innerProduct(float P[],float Q[]){
         float sIP = 0;
         for(int i = 0; i< P.length ; i++ ) {
             sIP = sum(sIP , P[i]*Q[i]);
@@ -204,7 +207,7 @@ public class Algorithms {
         return sIP;
     }
 
-    public double harmonicMean(float P[],float Q[]){
+    public static double harmonicMean(float P[],float Q[]){
         float sHM = 0, numarator=0, numitor =0, suma = 0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = (P[i]*Q[i]);
@@ -215,7 +218,7 @@ public class Algorithms {
         return sHM;
     }
 
-    public double cosine(float P[],float Q[]){
+    public static double cosine(float P[],float Q[]){
         float sCos = 0, numarator=0, numitor =0, suma = 0,p=0,q=0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = sum(numarator,P[i]*Q[i]);
@@ -228,7 +231,7 @@ public class Algorithms {
         return sCos;
     }
 
-    public double kumarHassebrook(float P[],float Q[]){
+    public static double kumarHassebrook(float P[],float Q[]){
         float sJac = 0, numarator=0, numitor =0, suma = 0,p=0,q=0,pq=0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = sum(numarator,P[i]*Q[i]);
@@ -242,7 +245,7 @@ public class Algorithms {
         return sJac;
     }
 
-    public double similarityJaccard(float P[],float Q[]){
+    public static double similarityJaccard(float P[],float Q[]){
         float sJac = 0, numarator=0, numitor =0, suma = 0,p=0,q=0,pq=0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = sum(numarator,P[i]*Q[i]);
@@ -256,11 +259,11 @@ public class Algorithms {
         return sJac;
     }
 
-    public double distanceJaccard(float P[],float Q[]) {
+    public static double distanceJaccard(float P[],float Q[]) {
         return 1-similarityJaccard(P,Q);
     }
 
-    public double similarityDice(float P[],float Q[]){
+    public static double similarityDice(float P[],float Q[]){
         float sDice = 0, numarator=0, numitor =0, suma = 0,p=0,q=0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = 2 * sum(numarator,P[i]*Q[i]);
@@ -273,11 +276,11 @@ public class Algorithms {
         return sDice;
     }
 
-    public double distanceDice(float P[],float Q[]) {
+    public static double distanceDice(float P[],float Q[]) {
         return 1-similarityDice(P,Q);
     }
 
-    public double similarityFidelity(float P[],float Q[]){
+    public static double similarityFidelity(float P[],float Q[]){
         float sFid = 0;
         for(int i = 0; i< P.length ; i++ ) {
             sFid = sum(sFid,(float)sqrt(P[i]*Q[i]));
@@ -285,7 +288,7 @@ public class Algorithms {
         return sFid;
     }
 
-    public double distanceBhattacharyya(float P[],float Q[]){
+    public static double distanceBhattacharyya(float P[],float Q[]){
         float dB = 0;
         for(int i = 0; i< P.length ; i++ ) {
             dB = sum(dB,(float)sqrt(P[i]*Q[i]));
@@ -293,7 +296,7 @@ public class Algorithms {
         return -log10(dB);
     }
 
-    public double distanceHellinger(float P[],float Q[]){
+    public static double distanceHellinger(float P[],float Q[]){
         float dH = 0;
         for(int i = 0; i< P.length ; i++ ) {
             dH = sum(dH,(float)sqrt(P[i]*Q[i]));
@@ -301,7 +304,7 @@ public class Algorithms {
         return 2*sqrt(1-dH);
     }
 
-    public double distanceMatusita(float P[],float Q[]){
+    public static double distanceMatusita(float P[],float Q[]){
         float dM = 0;
         for(int i = 0; i< P.length ; i++ ) {
             dM = sum(dM, (float) pow(((float)sqrt(P[i])-sqrt(Q[i])),2));
@@ -309,7 +312,7 @@ public class Algorithms {
         return sqrt(dM);
     }
 
-    public double distanceSquaredChord(float P[],float Q[]){
+    public static double distanceSquaredChord(float P[],float Q[]){
         float dSqc = 0;
         for(int i = 0; i< P.length ; i++ ) {
             dSqc = sum(dSqc, (float) pow(((float)sqrt(P[i])-sqrt(Q[i])),2));
@@ -317,11 +320,11 @@ public class Algorithms {
         return sqrt(dSqc);
     }
 
-    public double similaritySquaredChord(float P[],float Q[]){
+    public static double similaritySquaredChord(float P[],float Q[]){
         return 1-distanceSquaredChord(P,Q);
     }
 
-    public double distanceSquaredEuclidian(float P[],float Q[]){
+    public static double distanceSquaredEuclidian(float P[],float Q[]){
         float dSqe = 0;
         for(int i = 0; i< P.length ; i++ ) {
             dSqe = sum(dSqe, (float) pow(P[i]-Q[i],2));
@@ -329,7 +332,7 @@ public class Algorithms {
         return sqrt(dSqe);
     }
 
-    public double distancePearson(float P[],float Q[]){
+    public static double distancePearson(float P[],float Q[]){
         float dP = 0, numarator=0, numitor =0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = (float) pow((P[i] - Q[i]),2);
@@ -341,7 +344,7 @@ public class Algorithms {
         return dP;
     }
 
-    public double distanceNeyman(float P[],float Q[]){
+    public static double distanceNeyman(float P[],float Q[]){
         float dN = 0, numarator=0, numitor =0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = (float) pow((P[i] - Q[i]),2);
@@ -353,7 +356,7 @@ public class Algorithms {
         return dN;
     }
 
-    public double distanceSquared(float P[],float Q[]){
+    public static double distanceSquared(float P[],float Q[]){
         float dSqChi = 0, numarator=0, numitor =0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = (float) pow((P[i] - Q[i]),2);
@@ -365,7 +368,7 @@ public class Algorithms {
         return dSqChi;
     }
 
-    public double distanceProbabilisticSymmetric(float P[],float Q[]){
+    public static double distanceProbabilisticSymmetric(float P[],float Q[]){
         float dSqChi = 0, numarator=0, numitor =0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = (float) pow((P[i] - Q[i]),2);
@@ -377,7 +380,7 @@ public class Algorithms {
         return 2*dSqChi;
     }
 
-    public double distanceDivergence(float P[],float Q[]){
+    public static double distanceDivergence(float P[],float Q[]){
         float dSqChi = 0, numarator=0, numitor =0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = (float) pow((P[i] - Q[i]),2);
@@ -388,7 +391,7 @@ public class Algorithms {
         return 2*dSqChi;
     }
 
-    public double distanceClark(float P[],float Q[]){
+    public static double distanceClark(float P[],float Q[]){
         float dSqChi = 0, numarator=0, numitor =0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = abs(P[i] - Q[i]);
@@ -399,7 +402,7 @@ public class Algorithms {
         return sqrt(dSqChi);
     }
 
-    public double distanceAdditiceSymmetric(float P[],float Q[]){
+    public static double distanceAdditiceSymmetric(float P[],float Q[]){
         float adChi = 0, numarator=0, numitor =0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = (float) (pow((P[i] - Q[i]),2)*(P[i]+Q[i]));
@@ -410,7 +413,7 @@ public class Algorithms {
         return sqrt(adChi);
     }
 
-    public double distanceKullbackLeibler(float P[],float Q[]){
+    public static double distanceKullbackLeibler(float P[],float Q[]){
         float dKL = 0, numarator=0, numitor =0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = P[i];
@@ -421,7 +424,7 @@ public class Algorithms {
         return dKL;
     }
 
-    public double distanceJeffreys(float P[],float Q[]){
+    public static double distanceJeffreys(float P[],float Q[]){
         float dJ = 0, numarator=0, numitor =0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = P[i];
@@ -432,7 +435,7 @@ public class Algorithms {
         return dJ;
     }
 
-    public double distanceKDivergence(float P[],float Q[]){
+    public static double distanceKDivergence(float P[],float Q[]){
         float dJ = 0, numarator=0, numitor =0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = 2*P[i];
@@ -443,7 +446,7 @@ public class Algorithms {
         return dJ;
     }
 
-    public double distanceTopsoe(float P[],float Q[]){
+    public static double distanceTopsoe(float P[],float Q[]){
         float dTop = 0, p=0,qq=0,q=0;
         for(int i = 0; i< P.length ; i++ ) {
             p = 2*P[i];
@@ -454,7 +457,7 @@ public class Algorithms {
         return dTop;
     }
 
-    public double distanceJensenShannon(float P[],float Q[]){
+    public static double distanceJensenShannon(float P[],float Q[]){
         float dJS = 0, p=0,qq=0,q=0;
         for(int i = 0; i< P.length ; i++ ) {
             p = sum( p, (float) (P[i] * log10( 2*P[i] / (P[i] + Q[i]))));
@@ -464,7 +467,7 @@ public class Algorithms {
         return 1/2 * dJS;
     }
 
-    public double distanceJensenDifference(float P[],float Q[]){
+    public static double distanceJensenDifference(float P[],float Q[]){
         float dJD = 0, p=0,qq=0,q=0;
         for(int i = 0; i< P.length ; i++ ) {
             p = (float) (P[i] * log10(P[i]) + Q[i] * log10(Q[i]))/2;
@@ -474,7 +477,7 @@ public class Algorithms {
         return dJD;
     }
 
-    public double distanceKumarJohnson(float P[],float Q[]){
+    public static double distanceKumarJohnson(float P[],float Q[]){
         float dKJ = 0, p=0,qq=0,q=0;
         for(int i = 0; i< P.length ; i++ ) {
             p = (float) pow(pow(P[i],2) - pow(Q[i],2),2);
@@ -484,7 +487,7 @@ public class Algorithms {
         return dKJ;
     }
 
-    public double distanceAvg(float P[],float Q[]){
+    public static double distanceAvg(float P[],float Q[]){
         float dAcc = 0, numarator=0,numitor=0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = sum(numarator,(abs(P[i]-Q[i])) + Float.max(abs(P[i]-Q[i]),i));
