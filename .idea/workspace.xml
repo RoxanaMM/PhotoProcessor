@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1875ba05-8b46-43cb-8b32-afc071a4a8c5" name="Default" comment="I changed I lit bit but it's too complicated. All reorganized">
+    <list default="true" id="1875ba05-8b46-43cb-8b32-afc071a4a8c5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/photos/load/images/LoadImage.class" afterPath="$PROJECT_DIR$/target/classes/com/photos/load/images/LoadImage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/photos/load/images/LoadImage.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/load/images/LoadImage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -761,7 +760,7 @@
       <workItem from="1518729024573" duration="962000" />
       <workItem from="1518895312913" duration="4202000" />
       <workItem from="1520076617243" duration="963000" />
-      <workItem from="1520085020054" duration="1680000" />
+      <workItem from="1520085020054" duration="1705000" />
     </task>
     <task id="LOCAL-00001" summary="I changed I lit bit but it's too complicated. CPU too high. need to find other ways to get pixels.">
       <created>1515355185346</created>
@@ -777,11 +776,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518729116359</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="All there is to Change os">
+      <created>1520163903995</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1520163903995</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81676000" />
+    <option name="totallyTimeSpent" value="81701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="0" width="960" height="1030" extended-state="0" />
@@ -858,7 +864,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="I changed I lit bit but it's too complicated. CPU too high. need to find other ways to get pixels." />
     <MESSAGE value="I changed I lit bit but it's too complicated. All reorganized" />
-    <option name="LAST_COMMIT_MESSAGE" value="I changed I lit bit but it's too complicated. All reorganized" />
+    <MESSAGE value="All there is to Change os" />
+    <option name="LAST_COMMIT_MESSAGE" value="All there is to Change os" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
