@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1875ba05-8b46-43cb-8b32-afc071a4a8c5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/algorithms.iml" afterPath="$PROJECT_DIR$/algorithms.iml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/load/images/ImageViewer.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/loadImages/ImageViewer.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/load/images/LoadImage.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/loadImages/LoadImage.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/load/images/ReadImage.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/loadImages/ReadImage.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Algorithms.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photos/algorithms/Algorithms.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photos/filters/Filters.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photos/load/images/ImageViewer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photos/load/images/LoadImage.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photos/load/images/ReadImage.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photos/processing/SimpleSample.class" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,7 +24,7 @@
       <file leaf-file-name="LoadImage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/LoadImage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
+            <state relative-caret-position="577">
               <caret line="196" column="22" lean-forward="false" selection-start-line="196" selection-start-column="22" selection-end-line="196" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -742,7 +731,7 @@
       <workItem from="1520076617243" duration="963000" />
       <workItem from="1520085020054" duration="1705000" />
       <workItem from="1520753145149" duration="13049000" />
-      <workItem from="1520787118240" duration="24000" />
+      <workItem from="1520787118240" duration="105000" />
     </task>
     <task id="LOCAL-00001" summary="I changed I lit bit but it's too complicated. CPU too high. need to find other ways to get pixels.">
       <created>1515355185346</created>
@@ -765,14 +754,22 @@
       <option name="project" value="LOCAL" />
       <updated>1520163903995</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="changes.Added plotting but not working yet- needs unknown yet dependecy. Added some hist measurements.">
+      <created>1520787195294</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1520787195294</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94774000" />
+    <option name="totallyTimeSpent" value="94855000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="0" width="960" height="1030" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -846,7 +843,8 @@
     <MESSAGE value="I changed I lit bit but it's too complicated. CPU too high. need to find other ways to get pixels." />
     <MESSAGE value="I changed I lit bit but it's too complicated. All reorganized" />
     <MESSAGE value="All there is to Change os" />
-    <option name="LAST_COMMIT_MESSAGE" value="All there is to Change os" />
+    <MESSAGE value="changes.Added plotting but not working yet- needs unknown yet dependecy. Added some hist measurements." />
+    <option name="LAST_COMMIT_MESSAGE" value="changes.Added plotting but not working yet- needs unknown yet dependecy. Added some hist measurements." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1392,7 +1390,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/LoadImage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
+        <state relative-caret-position="577">
           <caret line="196" column="22" lean-forward="false" selection-start-line="196" selection-start-column="22" selection-end-line="196" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
