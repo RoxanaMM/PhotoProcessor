@@ -1,11 +1,15 @@
-package com.photos.load.images;
+package com.photos.loadImages;
 
 import com.photos.algorithms.Algorithms;
 import org.opencv.core.*;
 import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Roxana on 1/3/2018.
@@ -141,10 +145,59 @@ public class LoadImage extends Algorithms {
     }
 
     public static void main(String[] args) throws Exception {
-        String filePath = "E:\\MASTER\\an2\\disertatie\\temaDisertatie\\Original Brodatz";
-        File folder = new File(filePath);
-        readPixels(folder);
+      //  File folder = new File(filePath);
+      //  File[] listOfFiles = folder.listFiles();
+      //  String filePath = "C:\\forMaster\\temaDisertatie\\Original Brodatz";
+
+        //readPixels(folder);
         //showPixelFrequencies(frequencyOfFirstPic,frequencyOfSecondPic);
         //  int [] frequency = calculateFrequency(matrix);
+
+        Mat A, B,C,D = null;
+        A = Imgcodecs.imread("C:\\forMaster\\temaDisertatie\\Original Brodatz\\D1.gif");
+        D = Imgcodecs.imread("C:\\Users\\Roxana\\Downloads\\est.jpg");
+/*
+CV_COMP_CORREL: [-1;1] where 1 is perfect match and -1 is the worst.
+CV_COMP_CHISQR: [0;+infinty] where 0 is perfect match and mismatch is unbounded
+CV_COMP_INTERSECT: [0;1] (if histograms are normalized) 1 is perfect match and 0 mismatch.
+CV_COMP_BHATTACHARYYA and CV_COMP_HELLINGER: [0;1] where 0 is perfect match and 1 mismatch.*/
+        List<Mat> matList = new ArrayList<Mat>();
+        matList.add(A);
+        matList.add(D);
+
+        Mat hist_1 = new Mat();
+        Mat hist_2 = new Mat();
+
+        System.out.println(hist_1);
+        System.out.println(hist_2);
+
+        Mat mask = new Mat();
+        Mat hist = new Mat(256, 1, CvType.CV_8UC1);
+        MatOfInt histSize = new MatOfInt(256);
+        MatOfFloat ranges = new MatOfFloat(0, 256);
+        MatOfInt channels = new MatOfInt(0);
+
+        Imgproc.calcHist(Arrays.asList(A), new MatOfInt(0),
+                new Mat(), hist_1, histSize, ranges);
+        Imgproc.calcHist(Arrays.asList(D), new MatOfInt(0),
+                new Mat(), hist_2, histSize, ranges);
+
+        System.out.println(hist_1);
+        System.out.println(hist_2);
+
+        double res = Imgproc.compareHist(hist_1, hist_2, Imgproc.CV_COMP_CORREL);
+        Imgproc.calcHist(matList, channels, mask, hist, histSize, ranges);
+        Core.randu(hist_1, 1, 10);
+        Plot2d plot = Plot2d.create(data);
+        Mat mplot = new Mat();
+        plot.setPlotLineColor(new Scalar(0,0,255));
+        plot.render(mplot);
+        Imgcodecs.imwrite("e:/test.png", mplot);
+
+         Double d = new Double(res * 100);
+        System.out.println(res);
+        //ar trebui sa afisez ploturile histogramelor ptc nu imi afiseaza corect pt CORREL-> asta ptc "n-are limita superioara" vezi Doamne
+        //use the others
+        //indicatia ar fi sa export un csv si sa fac plot cu R studio maybeh :D
     }
 }

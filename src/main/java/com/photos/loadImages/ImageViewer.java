@@ -1,4 +1,4 @@
-package com.photos.load.images;
+package com.photos.loadImages;
 
 import org.opencv.core.Core;
 import org.opencv.core.Mat;

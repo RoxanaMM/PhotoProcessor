@@ -11,11 +11,31 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="opencv-330" level="project" />
-    <orderEntry type="library" name="opencv" level="project" />
-    <orderEntry type="library" name="javacpp-1.2.1" level="project" />
-    <orderEntry type="library" name="javacv-bin" level="project" />
-    <orderEntry type="library" name="artoolkitplus" level="project" />
-    <orderEntry type="library" name="opencv_library-2.4.3" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/forMaster/opencv/javacpp-1.2.1.jar!/" />
+          <root url="jar://C:/forMaster/opencv/opencv-330.jar!/" />
+          <root url="jar://C:/forMaster/opencv/opencv_library-2.4.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <NATIVE>
+          <root url="file://C:/forMaster/opencv" />
+        </NATIVE>
+        <SOURCES>
+          <root url="jar://C:/forMaster/opencv/opencv-330.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/forMaster/jlibsedml-2.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" name="jlibsedml-2.0.0" level="project" />
   </component>
 </module>
