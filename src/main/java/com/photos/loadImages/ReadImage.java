@@ -13,7 +13,7 @@ public class ReadImage {
 
     public static void main(String[] args) {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-            Mat A = Highgui.imread("E:\\MASTER\\an2\\disertatie\\temaDisertatie\\Set.jpg"); //"image_addr" is the address of the image
+            Mat A = Highgui.imread("C:\\forMaster\\temaDisertatie\\Original Brodatz\\D1.jpg"); //"image_addr" is the address of the image
             Mat C = A.clone();
             A.convertTo(A, CvType.CV_64FC3); //New line added.
             int size = (int) (A.total() * A.channels());

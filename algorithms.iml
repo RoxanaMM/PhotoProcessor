@@ -30,12 +30,32 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
+          <root url="jar://C:/forMaster/commons-io-1.4.jar!/" />
+          <root url="jar://C:/forMaster/commons-lang-2.6.jar!/" />
+          <root url="jar://C:/forMaster/dom4j-1.6.1.jar!/" />
+          <root url="jar://C:/forMaster/hamcrest-core-1.3.jar!/" />
+          <root url="jar://C:/forMaster/jaxen-1.1.1.jar!/" />
+          <root url="jar://C:/forMaster/jdom-1.0.jar!/" />
+          <root url="jar://C:/forMaster/jdom-1.1.3.jar!/" />
+          <root url="jar://C:/forMaster/jdom-contrib-1.1.3.jar!/" />
           <root url="jar://C:/forMaster/jlibsedml-2.0.0.jar!/" />
+          <root url="jar://C:/forMaster/jlibsedml-2.2.3.jar!/" />
+          <root url="jar://C:/forMaster/jmathml-2.2.1.jar!/" />
+          <root url="jar://C:/forMaster/jsc.jar!/" />
+          <root url="jar://C:/forMaster/junit-4.12.jar!/" />
+          <root url="jar://C:/forMaster/leotask.jar!/" />
+          <root url="jar://C:/forMaster/slf4j-api-1.7.13.jar!/" />
+          <root url="jar://C:/forMaster/xalan-2.7.0.jar!/" />
+          <root url="jar://C:/forMaster/xercesImpl-2.6.2.jar!/" />
+          <root url="jar://C:/forMaster/xml-apis-1.3.02.jar!/" />
+          <root url="jar://C:/forMaster/xom-1.2.5.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://C:/forMaster/jlibsedml-2.0.0-sources.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" name="jlibsedml-2.0.0" level="project" />
+    <orderEntry type="library" exported="" name="leotask" level="project" />
   </component>
 </module>
