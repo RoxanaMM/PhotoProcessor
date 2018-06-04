@@ -2,12 +2,18 @@ package com.photos.loadImages;
 
 import com.photos.algorithms.Algorithms;
 import org.opencv.core.*;
+import org.opencv.highgui.Highgui;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.*;
+
+import static org.opencv.core.CvType.CV_8UC3;
 import static org.opencv.highgui.Highgui.CV_LOAD_IMAGE_COLOR;
+import static org.opencv.imgproc.Imgproc.calcHist;
 
 /**
  * Created by Roxana on 1/3/2018.
@@ -28,21 +34,22 @@ public class LoadImage extends Algorithms {
     static float [][]ranges = { hranges, sranges };
     public static final int MAX_PIXELS = 256;
 
-    public static float[] readPixels(File folder, float[] frequencyOfFirstPic,float[] frequencyOfSecondPic) {
-        File[] listOfFiles = folder.listFiles();
-        for (File firstFileEntry : listOfFiles) {
-            for (File secondFileEntry : listOfFiles) {
+    public static float[] readPixels(float[] frequencyOfFirstPic){//File folder, float[] frequencyOfFirstPic){//,float[] frequencyOfSecondPic) {
+//        File[] listOfFiles = folder.listFiles();
+//        for (File firstFileEntry : listOfFiles) {
+//            for (File secondFileEntry : listOfFiles) {
                     String filePathA =  "C:\\forMaster\\temaDisertatie\\Original Brodatz\\D7_COLORED.jpg";//String.valueOf(firstFileEntry.getAbsoluteFile());
                     Mat A = Imgcodecs.imread(filePathA, 1);
                     A = Imgcodecs.imread(filePathA, CV_LOAD_IMAGE_COLOR);
                     frequencyOfFirstPic = calculateFrequency(A, frequencyOfFirstPic);
-frequencyOfFirstPic= Imgproc.calcHist(A,new MatOfInt(0),new Mat(),histogram, new MatOfInt(25), ranges);
+//frequencyOfFirstPic= Imgproc.calcHist(A,new MatOfInt(0),new Mat(),histogram, new MatOfInt(25), ranges);
                 String filePathB = "C:\\forMaster\\temaDisertatie\\Original Brodatz\\D9_COLORED.jpg"; //String.valueOf(firstFileEntry.getAbsoluteFile());
                 Mat B = Imgcodecs.imread(filePathB, 1);
                 A = Imgcodecs.imread(filePathA, CV_LOAD_IMAGE_COLOR);
-                frequencyOfSecondPic = calculateFrequency(B, frequencyOfSecondPic);
-            }
-        }
+               // frequencyOfSecondPic = calculateFrequency(B, frequencyOfSecondPic);
+//            }
+//        }
+      //  calcHistogram();
         return frequencyOfFirstPic;
     }
     public static void extractLBP(Mat A) {
@@ -56,12 +63,68 @@ frequencyOfFirstPic= Imgproc.calcHist(A,new MatOfInt(0),new Mat(),histogram, new
 
 
         for (Rect rect : cars.toArray()) {
-            System.out.println(String.format("Detected rectangle at %d,%d  %dx%d", rect.x, rect.y, rect.width, rect.height));
+         //   System.out.println(String.format("Detected rectangle at %d,%d  %dx%d", rect.x, rect.y, rect.width, rect.height));
         }
 
 
     }
 
+    public static void calculateHistogram() throws IOException {//File folder, float[] frequencyOfFirstPic,float[] frequencyOfSecondPic){
+
+        Mat A = Imgcodecs.imread("C:\\forMaster\\temaDisertatie\\Original Brodatz\\D7_COLORED.jpg");
+        int histSize1 = 256;
+        int hist_w = 512;
+        int hist_h = 400;
+        int bin_w = (int) ((double) hist_w/histSize1);
+
+        Mat histImage= new Mat( hist_h, hist_w, CV_8UC3, new Scalar( 0,0,0) );
+        List<Mat> matList = new ArrayList<Mat>();
+        matList.add(A);
+
+        Mat hist_1 = new Mat();
+
+        Mat mask = new Mat();
+        Mat hist = new Mat(256, 1, CvType.CV_8UC1);
+        MatOfInt histSize = new MatOfInt(256);
+        MatOfFloat ranges = new MatOfFloat(0, 256);
+        MatOfInt channels = new MatOfInt(256);
+
+        Imgproc.calcHist(Arrays.asList(A), new MatOfInt(0),
+                new Mat(), hist_1, histSize, ranges);
+        String pathResult = "C:\\forMaster\\z1.jpg";
+        Imgcodecs.imwrite(pathResult, hist_1);
+
+
+        //am normalizat histograma
+        Core.normalize(hist_1, hist_1, 0, histImage.rows(), Core.NORM_MINMAX, -1, new Mat());
+//        Imgproc.calcHist(Arrays.asList(A), new MatOfInt(0),
+//                new Mat(), hist_1, histSize, ranges);
+      //  double res = Imgproc.compareHist(hist_1, hist_2, Imgproc.CV_COMP_CORREL);
+      //  Imgproc.calcHist(matList, channels, mask, hist, histSize, ranges);
+//        for( int i = 1; i < histSize; i++ )
+//
+//        {
+//            line( histImage, Point( bin_w*(i-1), hist_h - cvRound(b_hist.at<float>(i-1)) ) , Point( bin_w*(i), hist_h - cvRound(b_hist.at<float>(i)) ), Scalar( 255, 0, 0), 2, 8, 0 );
+//
+//        }
+//        System.out.println(hist_1);
+        for (int i = 1; i < 256; i++) {
+
+
+            Imgproc.line(hist, new Point(bin_w * (i - 1),hist_h- Math.round(A.get( i-1,0)[0])),
+                    new Point(bin_w * (i), hist_h-Math.round(Math.round(A.get(i, 0)[0]))),
+                    new  Scalar(255, 0, 0), 2, 8, 0);
+
+        }
+
+        Mat corners_Scene = new Mat(4,1,CvType.CV_32FC2);
+        Imgproc.line(hist_1, new Point(corners_Scene.get(0,0)), new Point(corners_Scene.get(1,0)), new Scalar(0, 0, 0),4);
+
+        String pathResult1 = "C:\\forMaster\\z2.jpg";
+        Imgcodecs.imwrite(pathResult1, A);
+
+
+    }
     public static float[] calculateFrequency(Mat A, float frequency[]) {
         Mat C = A.clone();
         A.convertTo(A, CvType.CV_64FC3);
@@ -81,9 +144,9 @@ frequencyOfFirstPic= Imgproc.calcHist(A,new MatOfInt(0),new Mat(),histogram, new
         float[] pdf = new float[256];
         for (int i = 0; i < frequency.length; i++) {
             if (frequency[i] != 0) {
-                pdf[i]=frequency[i]/MAX_PIXELS;
+                pdf[i]=frequency[i]/MAX_PIXELS/i;
             }
-            System.out.println(pdf[i]);
+            //System.out.println(pdf[i]);
         }
         return pdf;
     }
@@ -145,11 +208,11 @@ frequencyOfFirstPic= Imgproc.calcHist(A,new MatOfInt(0),new Mat(),histogram, new
             similarities[49] = distanceKumarJohnson(frequencyOfFirstPic, frequencyOfSecondPic);
             similarities[50] = distanceAvg(frequencyOfFirstPic, frequencyOfSecondPic);
     }
-    public void compareSimilarityVector(double[]similarities){
-        for( int i= 0;i<51;i++){
-            if(similarities[i] >)
-        }
-    }
+//    public void compareSimilarityVector(double[]similarities){
+//        for( int i= 0;i<51;i++){
+//            if(similarities[i] >)
+//        }
+//    }
     public static void main(String[] args) throws Exception {
 
         //File[] listOfFiles = folder.listFiles();
@@ -209,10 +272,10 @@ frequencyOfFirstPic= Imgproc.calcHist(A,new MatOfInt(0),new Mat(),histogram, new
         float[] pdfOfFirstPic = new float[256];
         float[] pdfOfSecondPic = new float[256];
 
-        readPixels(folder, frequencyOfFirstPic, frequencyOfSecondPic);
+        //readPixels(folder, frequencyOfFirstPic, frequencyOfSecondPic);
         pdfOfFirstPic = calculatepdf(frequencyOfFirstPic);
         pdfOfSecondPic = calculatepdf(frequencyOfSecondPic);
-
+        calculateHistogram();
         calculateDistance(pdfOfFirstPic,pdfOfSecondPic);
     }
 }
