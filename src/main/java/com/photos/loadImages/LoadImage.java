@@ -72,12 +72,14 @@ public class LoadImage extends Algorithms {
     public static void calculateHistogram() throws IOException {//File folder, float[] frequencyOfFirstPic,float[] frequencyOfSecondPic){
 
         Mat A = Imgcodecs.imread("C:\\forMaster\\temaDisertatie\\Original Brodatz\\D7_COLORED.jpg");
+        Mat B = Imgcodecs.imread("C:\\forMaster\\temaDisertatie\\Original Brodatz\\B.jpg");
+
         int histSize1 = 256;
         int hist_w = 512;
         int hist_h = 400;
         int bin_w = (int) ((double) hist_w/histSize1);
 
-        Mat histImage= new Mat( hist_h, hist_w, CV_8UC3, new Scalar( 0,0,0) );
+        Mat histImage1= new Mat( hist_h, hist_w, CV_8UC3, new Scalar( 0,0,0) );
         List<Mat> matList = new ArrayList<Mat>();
         matList.add(A);
 
@@ -86,8 +88,10 @@ public class LoadImage extends Algorithms {
         Mat mask = new Mat();
         Mat hist = new Mat(256, 1, CvType.CV_8UC1);
         MatOfInt histSize = new MatOfInt(256);
-        MatOfFloat ranges = new MatOfFloat(0, 256);
-        MatOfInt channels = new MatOfInt(256);
+        float rRange[] = {0,256};
+        MatOfFloat ranges = new MatOfFloat(rRange);
+        //new float[][]{rRange, gRange, bRange};
+        MatOfInt channels = new MatOfInt(3);
 
         Imgproc.calcHist(Arrays.asList(A), new MatOfInt(0),
                 new Mat(), hist_1, histSize, ranges);
@@ -95,8 +99,17 @@ public class LoadImage extends Algorithms {
         Imgcodecs.imwrite(pathResult, hist_1);
 
 
+        List<Mat> bgrPlanes = new ArrayList<>();
+        Core.split(A, bgrPlanes);
+
+        Mat bHist = new Mat(), gHist = new Mat(), rHist = new Mat();
+        Imgproc.calcHist(bgrPlanes, new MatOfInt(0), new Mat(), bHist, new MatOfInt(histSize), ranges, false);
+        Imgproc.calcHist(bgrPlanes, new MatOfInt(1), new Mat(), gHist, new MatOfInt(histSize), ranges, false);
+        Imgproc.calcHist(bgrPlanes, new MatOfInt(2), new Mat(), rHist, new MatOfInt(histSize), ranges, false);
+
+
         //am normalizat histograma
-        Core.normalize(hist_1, hist_1, 0, histImage.rows(), Core.NORM_MINMAX, -1, new Mat());
+        Core.normalize(hist_1, hist_1, 0, histImage1.rows(), Core.NORM_MINMAX, -1, new Mat());
 //        Imgproc.calcHist(Arrays.asList(A), new MatOfInt(0),
 //                new Mat(), hist_1, histSize, ranges);
       //  double res = Imgproc.compareHist(hist_1, hist_2, Imgproc.CV_COMP_CORREL);
@@ -108,20 +121,61 @@ public class LoadImage extends Algorithms {
 //
 //        }
 //        System.out.println(hist_1);
+
+
+
+        Mat histImage = new Mat( hist_h, hist_w, CvType.CV_8UC3, new Scalar( 0,0,0) );
+        Core.normalize(bHist, bHist, 0, histImage.rows(), Core.NORM_MINMAX);
+        Core.normalize(gHist, gHist, 0, histImage.rows(), Core.NORM_MINMAX);
+        Core.normalize(rHist, rHist, 0, histImage.rows(), Core.NORM_MINMAX);
+
+        int histSize12 = 256;
+        float[] bHistData = new float[(int) (bHist.total() * bHist.channels())];
+        bHist.get(0, 0, bHistData);
+        float[] gHistData = new float[(int) (gHist.total() * gHist.channels())];
+        gHist.get(0, 0, gHistData);
+        float[] rHistData = new float[(int) (rHist.total() * rHist.channels())];
+        rHist.get(0, 0, rHistData);
+        for( int i = 1; i < histSize12; i++ ) {
+            Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(bHistData[i - 1])),
+                    new Point(bin_w * (i), hist_h - Math.round(bHistData[i])), new Scalar(255, 0, 0), 2);
+            Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(gHistData[i - 1])),
+                    new Point(bin_w * (i), hist_h - Math.round(gHistData[i])), new Scalar(0, 255, 0), 2);
+            Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(rHistData[i - 1])),
+                    new Point(bin_w * (i), hist_h - Math.round(rHistData[i])), new Scalar(0, 0, 255), 2);
+        }
+
+        String pathResult1 = "C:\\forMaster\\z4.jpg";
+
+        //B.push_back(A);
+//        Core.inRange(A, new Scalar(0, 255, 255), new Scalar(5, 90, 80), B );
+
+
+        Imgcodecs.imwrite(pathResult1, histImage);
+
+
         for (int i = 1; i < 256; i++) {
 
 
-            Imgproc.line(hist, new Point(bin_w * (i - 1),hist_h- Math.round(A.get( i-1,0)[0])),
-                    new Point(bin_w * (i), hist_h-Math.round(Math.round(A.get(i, 0)[0]))),
-                    new  Scalar(255, 0, 0), 2, 8, 0);
+            Imgproc.line(B, new Point(bin_w * (i - 1),hist_h- Math.round(hist_1.get( i-1,0)[0])),
+                    new Point(bin_w * (i), hist_h-Math.round(Math.round(hist_1.get(i, 0)[0]))),
+                    new  Scalar(255, 180, 10), 1, 8, 0);
+
 
         }
 
         Mat corners_Scene = new Mat(4,1,CvType.CV_32FC2);
         Imgproc.line(hist_1, new Point(corners_Scene.get(0,0)), new Point(corners_Scene.get(1,0)), new Scalar(0, 0, 0),4);
 
-        String pathResult1 = "C:\\forMaster\\z2.jpg";
-        Imgcodecs.imwrite(pathResult1, A);
+        String pathResult3 = "C:\\forMaster\\z2.jpg";
+
+     //B.push_back(A);
+//        Core.inRange(A, new Scalar(0, 255, 255), new Scalar(5, 90, 80), B );
+
+
+        System.out.println(A.size());
+        System.out.println(B.size());
+        Imgcodecs.imwrite(pathResult3, B);
 
 
     }
