@@ -26,7 +26,7 @@ public class Algorithms {
         }
         return dCB;
     }
-    public static double minkowskiLp(float P[],float Q[], int p){
+    public static double minkowskiLp(float P[],float Q[]){
         float dMk = 0;
         double dMkHelper;
         //ii voi da lui P o valoare random in range-ul (0,100)
@@ -34,11 +34,11 @@ public class Algorithms {
         double precision=0.5;
         double pe = r.nextInt(100-0) + 0;
         for(int i=0;i<P.length;i++){
-            dMk= (float) sum(dMk, (float) pow(abs(P[i]-Q[i]),p));
+            dMk= (float) sum(dMk, (float) pow(abs(P[i]-Q[i]),pe));
         }
         dMk = (float)Math.pow(dMk, 1.0 / pe);
         if( Math.abs(dMk - Math.round(dMk)) < precision) {
-            return dMk;//NOK because of the square root
+            return dMk;
         }
         return 0;
     }
@@ -111,14 +111,17 @@ public class Algorithms {
         }
         return dLor;
     }
-    public static double intersection(float P[],float Q[]){
+    public static double intersectionSimilarity(float P[],float Q[]){
         float sIS= 0;
         for(int i=0;i<P.length;i++) {
             sIS = (float) sum(sIS, Float.min(P[i],Q[i]));
         }
         return sIS;
     }
-    public static double waveHedges(float P[],float Q[]){
+    public static double intersectionDistance(float P[],float Q[]){
+        return 1- intersectionSimilarity(P,Q);
+    }
+    public static double waveHedgesDistance(float P[],float Q[]){
         float dWH = 0, numarator=0, numitor =0, suma = 0;
         for(int i=0;i<P.length;i++) {
             numarator = Float.min(P[i],Q[i]);
@@ -178,6 +181,9 @@ public class Algorithms {
             sRuz = numarator/numitor;
         return sRuz;
     }
+    public static double ruzickaDistance(float P[],float Q[]){
+        return 1-ruzicka(P,Q);
+    }
     public static double tanimoto(float P[],float Q[]){
         float sRuz = 20, numarator=0, numitor =0, suma = 0;
         for(int i = 0; i< P.length ; i++ ) {
@@ -188,14 +194,14 @@ public class Algorithms {
             sRuz = numarator/numitor;
         return sRuz;
     }
-    public static double innerProduct(float P[],float Q[]){
+    public static double innerProductSimilarity(float P[],float Q[]){
         float sIP = 0;
         for(int i = 0; i< P.length ; i++ ) {
             sIP = sum(sIP , P[i]*Q[i]);
         }
         return sIP;
     }
-    public static double harmonicMean(float P[],float Q[]){
+    public static double harmonicMeanSimilarity(float P[],float Q[]){
         float sHM = 10, numarator=0, numitor =0, suma = 0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = (P[i]*Q[i]);
@@ -205,7 +211,7 @@ public class Algorithms {
             sHM = numarator/numitor;
         return sHM;
     }
-    public static double cosine(float P[],float Q[]){
+    public static double cosineSimilarity(float P[],float Q[]){
         float sCos = 10, numarator=0, numitor =0, suma = 0,p=0,q=0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = sum(numarator,P[i]*Q[i]);
@@ -217,7 +223,7 @@ public class Algorithms {
             sCos =  numarator/numitor;
         return sCos;
     }
-    public static double kumarHassebrook(float P[],float Q[]){
+    public static double kumarHassebrookDistance(float P[],float Q[]){
         float sJac = 10, numarator=0, numitor =0, suma = 0,p=0,q=0,pq=0;
         for(int i = 0; i< P.length ; i++ ) {
             numarator = sum(numarator,P[i]*Q[i]);
@@ -433,14 +439,14 @@ public class Algorithms {
             q = (Q[i] == 0 || P[i] == 0) ? q : sum( q, (float) (Q[i] * log10( 2*P[i] / (P[i] + Q[i]))));
         }
         dJS = p+q;
-        return 1/2 * dJS;
+        return ((float)1/2 * dJS);
     }
     public static double distanceJensenDifference(float P[],float Q[]){
         float dJD = 10, p=0,qq=0,q=0;
         for(int i = 0; i< P.length ; i++ ) {
             p = (P[i] == 0 || Q[i] == 0) ? p : (float) (P[i] * log10(P[i]) + Q[i] * log10(Q[i]))/2;
             q = (Q[i] == 0 || P[i] == 0) ? q : (P[i] + Q[i])/2;
-            dJD = sum(dJD, (float) (p-q*log10(q)));
+            dJD = q !=0 ? sum(dJD, (float) (p-q*log10(q))) : sum(dJD, (float) (p-q));
         }
         return dJD;
     }
@@ -449,7 +455,7 @@ public class Algorithms {
         for(int i = 0; i< P.length ; i++ ) {
             p = (P[i] == 0 || Q[i] == 0) ? p : (float) pow(pow(P[i],2) - pow(Q[i],2),2);
             q = (Q[i] == 0 || P[i] == 0) ? q : (float) (2* pow((P[i]*Q[i]),3/2));
-            dKJ = sum(dKJ, p/q);
+            dKJ = q != 0 ? sum(dKJ, p/q) : dKJ;
         }
         return dKJ;
     }

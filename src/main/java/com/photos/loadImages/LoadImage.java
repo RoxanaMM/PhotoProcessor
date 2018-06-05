@@ -1,25 +1,15 @@
 package com.photos.loadImages;
 
+import com.photos.build.model.Model;
+import com.photos.enums.AlgoName;
 import com.photos.algorithms.Algorithms;
+import com.photos.enums.TypesOfPhotos;
 import org.opencv.core.*;
-import org.opencv.highgui.Highgui;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
-import org.opencv.objdetect.CascadeClassifier;
-
-import javax.imageio.ImageIO;
-import java.awt.color.ColorSpace;
-import java.awt.image.BufferedImage;
-import java.awt.image.BufferedImageOp;
-import java.awt.image.ColorConvertOp;
-import java.awt.image.DataBufferByte;
 import java.io.*;
 import java.util.*;
 
-import static org.opencv.core.CvType.CV_8UC3;
-import static org.opencv.core.CvType.CV_8UC1;
-import static org.opencv.highgui.Highgui.CV_LOAD_IMAGE_COLOR;
-import static org.opencv.imgproc.Imgproc.calcHist;
 
 /**
  * Created by Roxana on 1/3/2018.
@@ -28,7 +18,6 @@ public class LoadImage extends Algorithms {
     static {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
     }
-
 
     static float[] R = new float[256];
     static  int i =0;
@@ -40,50 +29,14 @@ public class LoadImage extends Algorithms {
     static float [][]ranges = { hranges, sranges };
     public static final int MAX_PIXELS = 256;
     private float[][] firstPicPdf;
-
-    public static float[] readPixels(float[] frequencyOfFirstPic){//File folder, float[] frequencyOfFirstPic){//,float[] frequencyOfSecondPic) {
-//        File[] listOfFiles = folder.listFiles();
-//        for (File firstFileEntry : listOfFiles) {
-//            for (File secondFileEntry : listOfFiles) {
-                    String filePathA =  "C:\\forMaster\\temaDisertatie\\Original Brodatz\\D7_COLORED.jpg";//String.valueOf(firstFileEntry.getAbsoluteFile());
-                    Mat A = Imgcodecs.imread(filePathA, 1);
-                    A = Imgcodecs.imread(filePathA, CV_LOAD_IMAGE_COLOR);
-                    frequencyOfFirstPic = calculateFrequency(A, frequencyOfFirstPic);
-//frequencyOfFirstPic= Imgproc.calcHist(A,new MatOfInt(0),new Mat(),histogram, new MatOfInt(25), ranges);
-                String filePathB = "C:\\forMaster\\temaDisertatie\\Original Brodatz\\D9_COLORED.jpg"; //String.valueOf(firstFileEntry.getAbsoluteFile());
-                Mat B = Imgcodecs.imread(filePathB, 1);
-                A = Imgcodecs.imread(filePathA, CV_LOAD_IMAGE_COLOR);
-               // frequencyOfSecondPic = calculateFrequency(B, frequencyOfSecondPic);
-//            }
-//        }
-      //  calcHistogram();
-        return frequencyOfFirstPic;
-    }
-    public static void extractLBP(Mat A) {
-        Mat srcMat = A.clone();
-        A.convertTo(A, CvType.CV_64FC3);
-
-        CascadeClassifier carClassifier = new CascadeClassifier("car_side_roty270_demo.xml");
-
-        MatOfRect cars = new MatOfRect();
-        carClassifier.detectMultiScale(srcMat, cars);
-
-
-        for (Rect rect : cars.toArray()) {
-         //   System.out.println(String.format("Detected rectangle at %d,%d  %dx%d", rect.x, rect.y, rect.width, rect.height));
-        }
-
-
-    }
-
-
+    static Map<AlgoName,Double> algoPower= new HashMap<AlgoName,Double>();
+    static Map<AlgoName, Model>algoPowerModel = new HashMap<AlgoName, Model>();
+    static double[]similarities = new double[51];
+    static Model m = new Model();
     public static float[] convertToGreyHelper(Mat A){
         float[] floatArrayA = new float[256];
         Mat destinImg = new Mat(A.rows(), A.cols(), A.type());
         Imgproc.cvtColor(A,destinImg,Imgproc.COLOR_RGB2GRAY);
-
-        String pathResult = "C:\\forMaster\\savedHisto\\caca.jpg";
-        Imgcodecs.imwrite(pathResult, destinImg);
 
         int histSize = 256;
         int hist_w = 512;
@@ -100,101 +53,129 @@ public class LoadImage extends Algorithms {
         Mat bHist = new Mat();
 
         Imgproc.calcHist(bgrPlanes, new MatOfInt(0), new Mat(), bHist, new MatOfInt(histSize), ranges, false);
-        System.out.println("The dimesions are; "+ bHist.dims());
-        System.out.println(bHist.size());
-        System.out.println(bHist.rows());
-        System.out.println(bHist.cols());
         for(int i = 0 ;i<bHist.rows();i++) {
             for (int j = 0; j < bHist.cols(); j++) {
                 for (int k = 0; k < bHist.get(i, j).length; k++) {
-                    System.out.print(i + " - " + Math.round((bHist.get(i, j)[k]* 100.0) / 100.0));
-                    floatArrayA[i] = (float)Math.round((bHist.get(i, j)[k]* 100.0) / 100.0); // Or whatever default you want.
+                    floatArrayA[i] = (float)Math.round((bHist.get(i, j)[k]* 100.0) / 100.0);
                 }
             }
-            System.out.println("\n");
         }
         return floatArrayA;
     }
 
     public static void convertImageToGrey(File folder) throws IOException {
         float[][] firstPicPdf = new float[6][256];
+        float first;
         int i=0;
+        int histSize = 256;
+        int hist_w = 512;
+        int hist_h = 400;
+        int bin_w = (int) ((double) hist_w / histSize);
+
         File[] listOfFiles = folder.listFiles();
         for (File firstFileEntry : listOfFiles) {
             for (File fileEntry : listOfFiles) {
                 if (fileEntry.getAbsolutePath().contains("jpg")) {
                     Mat A = Imgcodecs.imread(fileEntry.getAbsolutePath());
 
-//
-//                    Mat destinImg = new Mat(A.rows(), A.cols(), A.type());
-//                    Imgproc.cvtColor(A,destinImg,Imgproc.COLOR_RGB2GRAY);
-//                    int histSize = 256;
-//                    int hist_w = 512;
-//                    int hist_h = 400;
-//                    int bin_w = (int) ((double) hist_w / histSize);
-//
-//
-//                    Mat hist = new Mat(256, 1, CvType.CV_8UC1);
-//                    MatOfFloat ranges = new MatOfFloat(0, 256);
-//                    MatOfInt channels = new MatOfInt(0);
-//
-//                    List<Mat> bgrPlanes = new ArrayList<>();
-//                    Core.split(destinImg, bgrPlanes);
-//
-//                    Mat bHist = new Mat();
-//
-//                    Imgproc.calcHist(bgrPlanes, new MatOfInt(0), new Mat(), bHist, new MatOfInt(histSize), ranges, false);
-//                    System.out.println("The dimesions are; "+ bHist.dims());
-//                    System.out.println(bHist.size());
-//                    System.out.println(bHist.rows());
-//                    System.out.println(bHist.cols());
-//                    for(int i = 0 ;i<bHist.rows();i++) {
-//                        for (int j = 0; j < bHist.cols(); j++) {
-//                            for (int k = 0; k < bHist.get(i, j).length; k++) {
-//                                System.out.print(i + " - " + Math.round((bHist.get(i, j)[k]* 100.0) / 100.0));
-//                                firstPicPdf = (float)Math.round(bHist.get(i, j)[k]);
-//                                calculateDistance(firstPicPdf, secondPicPdf);
-//                            }
-//                            System.out.println("\n");
-//                        }
-//                    }
-//
-//                    Mat histImage = new Mat(hist_h, hist_w, CvType.CV_8UC1, new Scalar(0));
-//                    Core.normalize(bHist, bHist, 0, histImage.rows(), Core.NORM_MINMAX);
-//
-//                    float[] bHistData = new float[(int) (bHist.total() * bHist.channels())];
-//                    bHist.get(0, 0, bHistData);
-//
-//                    for (int i = 1; i < histSize; i++) {
-//                        Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(bHistData[i - 1])),
-//                                new Point(bin_w * (i), hist_h - Math.round(bHistData[i])), new Scalar(255, 0, 0), 2);
-//
-//                    }
-//
-//                    String pathResult = "C:\\forMaster\\savedHisto\\";
-//                    pathResult = pathResult.concat(fileEntry.getName());
-//                    Imgcodecs.imwrite(pathResult, histImage);
-//                }
-                    if(i<=5)
+                    Mat destinImg = new Mat(A.rows(), A.cols(), A.type());
+                    Imgproc.cvtColor(A,destinImg,Imgproc.COLOR_RGB2GRAY);
+
+                    Mat hist = new Mat(256, 1, CvType.CV_8UC1);
+                    MatOfFloat ranges = new MatOfFloat(0, 256);
+                    MatOfInt channels = new MatOfInt(0);
+
+                    List<Mat> bgrPlanes = new ArrayList<>();
+                    Core.split(destinImg, bgrPlanes);
+
+                    Mat bHist = new Mat();
+
+                    Imgproc.calcHist(bgrPlanes, new MatOfInt(0), new Mat(), bHist, new MatOfInt(histSize), ranges, false);
+
+                    Mat histImage = new Mat(hist_h, hist_w, CvType.CV_8UC1, new Scalar(0));
+                    Core.normalize(bHist, bHist, 0, histImage.rows(), Core.NORM_MINMAX);
+
+                    float[] bHistData = new float[(int) (bHist.total() * bHist.channels())];
+                    bHist.get(0, 0, bHistData);
+
+                    for (int k = 1; k < histSize; k++) {
+                        Imgproc.line(histImage, new Point(bin_w * (k - 1), hist_h - Math.round(bHistData[k - 1])),
+                                new Point(bin_w * (k), hist_h - Math.round(bHistData[k])), new Scalar(255, 0, 0), 1);
+
+                    }
+
+                    String pathResult = "C:\\forMaster\\savedHisto\\";
+                    pathResult = pathResult.concat(fileEntry.getName());
+                    Imgcodecs.imwrite(pathResult, histImage);
+
+                    if(i<=5)//asta ptc stiu cate poze am in foolder ^______________________________^
                         firstPicPdf[i++] = convertToGreyHelper(A);
                 }
             }
         }
-                calculateDistance(firstPicPdf[0],firstPicPdf[1]);
+            calculateDistance(firstPicPdf[0],firstPicPdf[1], TypesOfPhotos.Greyscale);
     }
-    
+
+
+    public static float[][] colouredHelper(Mat A){
+        float[][]floatArray = new float[3][256];
+        int histSize = 256;
+        int hist_w = 512;
+        int hist_h = 400;
+        int bin_w = (int) ((double) hist_w / histSize);
+
+        Mat hist = new Mat(256, 1, CvType.CV_8UC1);
+        MatOfFloat ranges = new MatOfFloat(0, 256);
+        MatOfInt channels = new MatOfInt(3);
+
+        List<Mat> bgrPlanes = new ArrayList<>();
+        Core.split(A, bgrPlanes);
+
+        Mat bHist = new Mat(),gHist = new Mat(),rHist = new Mat();
+
+        Imgproc.calcHist(bgrPlanes, new MatOfInt(0), new Mat(), bHist, new MatOfInt(histSize), ranges, false);
+        for(int i = 0 ;i<bHist.rows();i++) {
+            for (int j = 0; j < bHist.cols(); j++) {
+                for (int k = 0; k < bHist.get(i, j).length; k++) {
+                    floatArray[0][i] = (float)Math.round((bHist.get(i, j)[k]* 100.0) / 100.0);
+                }
+            }
+        }
+
+        Imgproc.calcHist(bgrPlanes, new MatOfInt(1), new Mat(), gHist, new MatOfInt(histSize), ranges, false);
+        for (int i = 0; i < gHist.rows(); i++) {
+            for (int j = 0; j < gHist.cols(); j++) {
+                for (int k = 0; k < gHist.get(i, j).length; k++) {
+                    floatArray[1][i] = (float) Math.round((gHist.get(i, j)[k] * 100.0) / 100.0);
+                }
+            }
+        }
+        Imgproc.calcHist(bgrPlanes, new MatOfInt(2), new Mat(), rHist, new MatOfInt(histSize), ranges, false);
+        for (int i = 0; i < rHist.rows(); i++) {
+            for (int j = 0; j < rHist.cols(); j++) {
+                for (int k = 0; k < rHist.get(i, j).length; k++) {
+                    floatArray[2][i] = (float) Math.round((rHist.get(i, j)[k] * 100.0) / 100.0);
+                }
+            }
+        }
+
+
+        return floatArray;
+    }
+
+
     public static void calculateAndDrawHistogram(File folder) throws IOException {
+        int histSize = 256;
+        int hist_w = 512;
+        int hist_h = 400;
+        int bin_w = (int) ((double) hist_w / histSize);
+        float[][][] floatArray = new float[2][3][256];
         File[] listOfFiles = folder.listFiles();
         for (File firstFileEntry : listOfFiles) {
             for (File fileEntry : listOfFiles) {
                 if (fileEntry.getAbsolutePath().contains("jpg")) {
+
                     Mat A = Imgcodecs.imread(fileEntry.getAbsolutePath());
-
-                    int histSize = 256;
-                    int hist_w = 512;
-                    int hist_h = 400;
-                    int bin_w = (int) ((double) hist_w / histSize);
-
                     Mat hist = new Mat(256, 1, CvType.CV_8UC1);
                     MatOfFloat ranges = new MatOfFloat(0, 256);
                     MatOfInt channels = new MatOfInt(3);
@@ -202,134 +183,176 @@ public class LoadImage extends Algorithms {
                     List<Mat> bgrPlanes = new ArrayList<>();
                     Core.split(A, bgrPlanes);
 
-                    Mat bHist = new Mat(), gHist = new Mat(), rHist = new Mat();
-                    Imgproc.calcHist(bgrPlanes, new MatOfInt(0), new Mat(), bHist, new MatOfInt(histSize), ranges, false);
-                    Imgproc.calcHist(bgrPlanes, new MatOfInt(1), new Mat(), gHist, new MatOfInt(histSize), ranges, false);
-                    Imgproc.calcHist(bgrPlanes, new MatOfInt(2), new Mat(), rHist, new MatOfInt(histSize), ranges, false);
+                        Mat bHist = new Mat(), gHist = new Mat(), rHist = new Mat();
 
-                    System.out.println(bHist.size());
-                    System.out.println(gHist.size());
-                    System.out.println(rHist.size());
+                        Imgproc.calcHist(bgrPlanes, new MatOfInt(0), new Mat(), bHist, new MatOfInt(histSize), ranges, false);
+                        Imgproc.calcHist(bgrPlanes, new MatOfInt(1), new Mat(), gHist, new MatOfInt(histSize), ranges, false);
+                        Imgproc.calcHist(bgrPlanes, new MatOfInt(2), new Mat(), rHist, new MatOfInt(histSize), ranges, false);
 
-                    Mat histImage = new Mat(hist_h, hist_w, CvType.CV_8UC3, new Scalar(0, 0, 0));
-                    Core.normalize(bHist, bHist, 0, histImage.rows(), Core.NORM_MINMAX);
-                    Core.normalize(gHist, gHist, 0, histImage.rows(), Core.NORM_MINMAX);
-                    Core.normalize(rHist, rHist, 0, histImage.rows(), Core.NORM_MINMAX);
+                        //primul array este pentru blue, al doilea red, al 3-lea green
 
-                    float[] bHistData = new float[(int) (bHist.total() * bHist.channels())];
-                    bHist.get(0, 0, bHistData);
-                    float[] gHistData = new float[(int) (gHist.total() * gHist.channels())];
-                    gHist.get(0, 0, gHistData);
-                    float[] rHistData = new float[(int) (rHist.total() * rHist.channels())];
-                    rHist.get(0, 0, rHistData);
-                    for (int i = 1; i < histSize; i++) {
-                        Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(bHistData[i - 1])),
-                                new Point(bin_w * (i), hist_h - Math.round(bHistData[i])), new Scalar(255, 0, 0), 2);
-                        Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(gHistData[i - 1])),
-                                new Point(bin_w * (i), hist_h - Math.round(gHistData[i])), new Scalar(0, 255, 0), 2);
-                        Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(rHistData[i - 1])),
-                                new Point(bin_w * (i), hist_h - Math.round(rHistData[i])), new Scalar(0, 0, 255), 2);
-                    }
 
-                    String pathResult = "C:\\forMaster\\savedHisto\\";
-                    pathResult = pathResult.concat(fileEntry.getName());
-                    Imgcodecs.imwrite(pathResult, histImage);
+                        Mat histImage = new Mat(hist_h, hist_w, CvType.CV_8UC3, new Scalar(0, 0, 0));
+                        Core.normalize(bHist, bHist, 0, histImage.rows(), Core.NORM_MINMAX);
+                        Core.normalize(gHist, gHist, 0, histImage.rows(), Core.NORM_MINMAX);
+                        Core.normalize(rHist, rHist, 0, histImage.rows(), Core.NORM_MINMAX);
+
+                        float[] bHistData = new float[(int) (bHist.total() * bHist.channels())];
+                        bHist.get(0, 0, bHistData);
+                        float[] gHistData = new float[(int) (gHist.total() * gHist.channels())];
+                        gHist.get(0, 0, gHistData);
+                        float[] rHistData = new float[(int) (rHist.total() * rHist.channels())];
+                        rHist.get(0, 0, rHistData);
+                        for (int i = 1; i < histSize; i++) {
+                            Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(bHistData[i - 1])),
+                                    new Point(bin_w * (i), hist_h - Math.round(bHistData[i])), new Scalar(255, 0, 0), 1);
+                            Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(gHistData[i - 1])),
+                                    new Point(bin_w * (i), hist_h - Math.round(gHistData[i])), new Scalar(0, 255, 0), 1);
+                            Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(rHistData[i - 1])),
+                                    new Point(bin_w * (i), hist_h - Math.round(rHistData[i])), new Scalar(0, 0, 255), 1);
+                        }
+
+
+
+                if(i<2)//asta ptc stiu cate poze am in foolder ^______________________________^
+                    floatArray[i++] = colouredHelper(A);
+
+                calculateDistance(floatArray[0][0], floatArray[1][0], TypesOfPhotos.Coloured);
+                calculateDistance(floatArray[0][1], floatArray[1][1], TypesOfPhotos.Coloured);
+                calculateDistance(floatArray[0][2], floatArray[1][2], TypesOfPhotos.Coloured);
+
+                String pathResult = "C:\\forMaster\\temaDisertatie\\histogramePozeSimilare\\";
+                pathResult = pathResult.concat(fileEntry.getName());
+                Imgcodecs.imwrite(pathResult, histImage);
                 }
             }
-        }
 
-    }
-    public static float[] calculateFrequency(Mat A, float frequency[]) {
-        Mat C = A.clone();
-        A.convertTo(A, CvType.CV_64FC3);
-      //  A.rows()
-        int size = (int) (A.total() * A.channels());
-        double[] temp = new double[size];
-        A.get(0, 0, temp);
-        for (int i = 0; i < size; i++) {
-            double pixel = temp[i];
-            frequency[(int) pixel]++;
         }
-        C.put(0, 0, temp);
-        return frequency;
     }
 
-    static float[] calculatepdf(float[] frequency) {
-        float[] pdf = new float[256];
-        for (int i = 0; i < frequency.length; i++) {
-            if (frequency[i] != 0) {
-                pdf[i]=frequency[i]/MAX_PIXELS/i;
-            }
-            //System.out.println(pdf[i]);
-        }
-        return pdf;
-    }
 
-    public static void calculateDistance(float frequencyOfFirstPic[], float frequencyOfSecondPic[]) {
+    public static void calculateDistance(float frequencyOfFirstPic[], float frequencyOfSecondPic[], TypesOfPhotos typesOfPhotos) {
         int p = 0;
         for (int i = 0; i < R.length; i++) {
             R[i] = 100;
         }
-        double[]similarities = new double[51];
-            similarities[1] = euclidianL2(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[2] = cityBlockL1(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[3] = minkowskiLp(frequencyOfFirstPic, frequencyOfSecondPic, p);
-            similarities[4] = cebyshevLinf(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[5] = sorensen(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[6] = gower(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[7] = soergel(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[8] = kulczynskid(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[9] = canberra(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[10] = lorentzian(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[11] = intersection(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[12] = waveHedges(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[13] = similarityCzekanowski(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[14] = distanceCzekanowski(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[15] = similarityMotyka(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[16] = distanceMotyka(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[17] = similarityKulczynkyS(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[18] = distanceKulczynkyS(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[19] = ruzicka(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[20] = tanimoto(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[21] = innerProduct(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[22] = harmonicMean(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[23] = cosine(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[24] = kumarHassebrook(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[25] = similarityJaccard(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[26] = distanceJaccard(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[27] = similarityDice(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[28] = distanceDice(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[29] = similarityFidelity(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[30] = distanceBhattacharyya(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[31] = distanceHellinger(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[32] = distanceMatusita(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[33] = distanceSquaredChord(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[34] = similaritySquaredChord(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[35] = distanceSquaredEuclidian(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[36] = distancePearson(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[37] = distanceNeyman(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[38] = distanceSquared(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[39] = distanceProbabilisticSymmetric(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[40] = distanceDivergence(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[41] = distanceClark(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[42] = distanceAdditiceSymmetric(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[43] = distanceKullbackLeibler(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[44] = distanceJeffreys(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[45] = distanceKDivergence(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[46] = distanceTopsoe(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[47] = distanceJensenShannon(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[48] = distanceJensenDifference(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[49] = distanceKumarJohnson(frequencyOfFirstPic, frequencyOfSecondPic);
-            similarities[50] = distanceAvg(frequencyOfFirstPic, frequencyOfSecondPic);
+            similarities[0] = euclidianL2(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.euclidianL2, similarities[0]);
+            similarities[1] = cityBlockL1(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.cityBlockL1, similarities[1]);
+            similarities[2] = minkowskiLp(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.minkowskiLp, similarities[2]);
+            similarities[3] = cebyshevLinf(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.cebyshevLinf, similarities[3]);
+            similarities[4] = sorensen(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.sorensen, similarities[4]);
+            similarities[5] = gower(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.gower, similarities[5]);
+            similarities[6] = soergel(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.soergel, similarities[6]);
+            similarities[7] = kulczynskid(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.kulczynskid, similarities[7]);
+            similarities[8] = canberra(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.canberra, similarities[8]);
+            similarities[9] = lorentzian(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.lorentzian, similarities[9]);
+            similarities[10] = intersectionDistance(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.intersectionDistance, similarities[10]);
+            similarities[11] = waveHedgesDistance(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.waveHedgesDistance, similarities[11]);
+            similarities[12] = distanceCzekanowski(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceCzekanowski, similarities[12]);
+            similarities[13] = distanceMotyka(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceMotyka, similarities[13]);
+            similarities[14] = distanceKulczynkyS(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceKulczynkyS, similarities[14]);
+            similarities[15] = ruzickaDistance(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.ruzicka, similarities[18]);
+            similarities[16] = tanimoto(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.tanimoto, similarities[19]);
+            similarities[20] = innerProductSimilarity(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.innerProductSimilarity, similarities[20]);
+            similarities[21] = harmonicMeanSimilarity(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.harmonicMean, similarities[21]);
+            similarities[22] = cosineSimilarity(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.cosine, similarities[22]);
+            similarities[23] = kumarHassebrookDistance(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.kumarHassebrookDistance, similarities[23]);
+            similarities[24] = similarityJaccard(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.similarityJaccard, similarities[24]);
+            similarities[25] = distanceJaccard(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceJaccard, similarities[25]);
+            similarities[26] = similarityDice(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.similarityDice, similarities[26]);
+            similarities[27] = distanceDice(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceDice, similarities[27]);
+            similarities[28] = similarityFidelity(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.similarityFidelity, similarities[28]);
+            similarities[29] = distanceBhattacharyya(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceBhattacharyya, similarities[29]);
+            similarities[30] = distanceHellinger(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceHellinger, similarities[30]);
+            similarities[31] = distanceMatusita(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceMatusita, similarities[31]);
+            similarities[32] = distanceSquaredChord(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceSquaredChord, similarities[32]);
+            similarities[34] = distanceSquaredEuclidian(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceSquaredEuclidian, similarities[34]);
+            similarities[35] = distancePearson(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distancePearson, similarities[35]);
+            similarities[36] = distanceNeyman(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceNeyman, similarities[36]);
+            similarities[37] = distanceSquared(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceSquared, similarities[37]);
+            similarities[38] = distanceProbabilisticSymmetric(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceProbabilisticSymmetric, similarities[38]);
+            similarities[39] = distanceDivergence(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceDivergence, similarities[39]);
+            similarities[40] = distanceClark(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceClark, similarities[40]);
+            similarities[41] = distanceAdditiceSymmetric(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceAdditiceSymmetric, similarities[41]);
+            similarities[42] = distanceKullbackLeibler(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceKullbackLeibler, similarities[42]);
+            similarities[43] = distanceJeffreys(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceJeffreys, similarities[43]);
+            similarities[44] = distanceKDivergence(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceKDivergence, similarities[44]);
+            similarities[45] = distanceTopsoe(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceTopsoe, similarities[45]);
+            similarities[46] = distanceJensenShannon(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceJensenShannon, similarities[46]);
+            similarities[47] = distanceJensenDifference(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceJensenDifference, similarities[47]);
+            similarities[48] = distanceKumarJohnson(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceKumarJohnson, similarities[48]);
+            similarities[49] = distanceAvg(frequencyOfFirstPic, frequencyOfSecondPic);
+        algoPower.put(AlgoName.distanceAvg, similarities[49]);
+
+        m.setValuesPerType(typesOfPhotos,similarities);
+        compareSimilarityVector(similarities);
     }
-//    public void compareSimilarityVector(double[]similarities){
-//        for( int i= 0;i<51;i++){
-//            if(similarities[i] >)
-//        }
-//    }
+    public static void compareSimilarityVector(double[]similarities){
+           // Euclidian -> 0 similar else nesimilar
+        //intersectii de hitograme => 1 inseamna similar 0 nesimilar
+        //la vectori
+        // 0 -> 0 similaritate
+        // valori mari -> similaritate mare
+        //valori mici cu - -> directii opuse
+       for(Map.Entry<AlgoName, Double> entry: algoPower.entrySet()){
+           if (entry.getKey().name().contains("similarity")){
+               System.out.println("Similarity values: 1-> similar , 0 -> nesimilar ");
+
+           }else{
+               System.out.println("Distance values: 0-> similar, 1-> not similar");
+           }
+       }
+
+    }
     public static void main(String[] args) throws Exception {
 
-        String filePath = "C:\\forMaster\\temaDisertatie\\Original Brodatz";
+        //    String filePath = "C:\\forMaster\\temaDisertatie\\pozeNesimilareGreyScaleTransform";
+      String filePath = "C:\\forMaster\\temaDisertatie\\pozeSimilareGreyScaleTransform";
         File folder = new File(filePath);
         //readPixels(folder);
         //showPixelFrequencies(frequencyOfFirstPic,frequencyOfSecondPic);
@@ -379,16 +402,7 @@ public class LoadImage extends Algorithms {
 //        plot.render(mplot);
 //        Imgcodecs.imwrite("e:/test.png", jg.plot2d);
         convertImageToGrey(folder);
-        float[] frequencyOfFirstPic = new float[256];
-        float[] frequencyOfSecondPic = new float[256];
+        calculateAndDrawHistogram(folder);
 
-        float[] pdfOfFirstPic = new float[256];
-        float[] pdfOfSecondPic = new float[256];
-
-        //readPixels(folder, frequencyOfFirstPic, frequencyOfSecondPic);
-        pdfOfFirstPic = calculatepdf(frequencyOfFirstPic);
-        pdfOfSecondPic = calculatepdf(frequencyOfSecondPic);
-        //calculateAndDrawHistogram(folder);
-        calculateDistance(pdfOfFirstPic,pdfOfSecondPic);
     }
 }
