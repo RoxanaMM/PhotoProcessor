@@ -7,11 +7,17 @@ import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 
-import java.io.File;
-import java.io.IOException;
+import javax.imageio.ImageIO;
+import java.awt.color.ColorSpace;
+import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImageOp;
+import java.awt.image.ColorConvertOp;
+import java.awt.image.DataBufferByte;
+import java.io.*;
 import java.util.*;
 
 import static org.opencv.core.CvType.CV_8UC3;
+import static org.opencv.core.CvType.CV_8UC1;
 import static org.opencv.highgui.Highgui.CV_LOAD_IMAGE_COLOR;
 import static org.opencv.imgproc.Imgproc.calcHist;
 
@@ -33,6 +39,7 @@ public class LoadImage extends Algorithms {
     static float[] sranges = { 0, 256 };
     static float [][]ranges = { hranges, sranges };
     public static final int MAX_PIXELS = 256;
+    private float[][] firstPicPdf;
 
     public static float[] readPixels(float[] frequencyOfFirstPic){//File folder, float[] frequencyOfFirstPic){//,float[] frequencyOfSecondPic) {
 //        File[] listOfFiles = folder.listFiles();
@@ -69,114 +76,167 @@ public class LoadImage extends Algorithms {
 
     }
 
-    public static void calculateHistogram() throws IOException {//File folder, float[] frequencyOfFirstPic,float[] frequencyOfSecondPic){
 
-        Mat A = Imgcodecs.imread("C:\\forMaster\\temaDisertatie\\Original Brodatz\\D7_COLORED.jpg");
-        Mat B = Imgcodecs.imread("C:\\forMaster\\temaDisertatie\\Original Brodatz\\B.jpg");
+    public static float[] convertToGreyHelper(Mat A){
+        float[] floatArrayA = new float[256];
+        Mat destinImg = new Mat(A.rows(), A.cols(), A.type());
+        Imgproc.cvtColor(A,destinImg,Imgproc.COLOR_RGB2GRAY);
 
-        int histSize1 = 256;
+        String pathResult = "C:\\forMaster\\savedHisto\\caca.jpg";
+        Imgcodecs.imwrite(pathResult, destinImg);
+
+        int histSize = 256;
         int hist_w = 512;
         int hist_h = 400;
-        int bin_w = (int) ((double) hist_w/histSize1);
+        int bin_w = (int) ((double) hist_w / histSize);
 
-        Mat histImage1= new Mat( hist_h, hist_w, CV_8UC3, new Scalar( 0,0,0) );
-        List<Mat> matList = new ArrayList<Mat>();
-        matList.add(A);
-
-        Mat hist_1 = new Mat();
-
-        Mat mask = new Mat();
         Mat hist = new Mat(256, 1, CvType.CV_8UC1);
-        MatOfInt histSize = new MatOfInt(256);
-        float rRange[] = {0,256};
-        MatOfFloat ranges = new MatOfFloat(rRange);
-        //new float[][]{rRange, gRange, bRange};
-        MatOfInt channels = new MatOfInt(3);
-
-        Imgproc.calcHist(Arrays.asList(A), new MatOfInt(0),
-                new Mat(), hist_1, histSize, ranges);
-        String pathResult = "C:\\forMaster\\z1.jpg";
-        Imgcodecs.imwrite(pathResult, hist_1);
-
+        MatOfFloat ranges = new MatOfFloat(0, 256);
+        MatOfInt channels = new MatOfInt(0);
 
         List<Mat> bgrPlanes = new ArrayList<>();
-        Core.split(A, bgrPlanes);
+        Core.split(destinImg, bgrPlanes);
 
-        Mat bHist = new Mat(), gHist = new Mat(), rHist = new Mat();
+        Mat bHist = new Mat();
+
         Imgproc.calcHist(bgrPlanes, new MatOfInt(0), new Mat(), bHist, new MatOfInt(histSize), ranges, false);
-        Imgproc.calcHist(bgrPlanes, new MatOfInt(1), new Mat(), gHist, new MatOfInt(histSize), ranges, false);
-        Imgproc.calcHist(bgrPlanes, new MatOfInt(2), new Mat(), rHist, new MatOfInt(histSize), ranges, false);
-
-
-        //am normalizat histograma
-        Core.normalize(hist_1, hist_1, 0, histImage1.rows(), Core.NORM_MINMAX, -1, new Mat());
-//        Imgproc.calcHist(Arrays.asList(A), new MatOfInt(0),
-//                new Mat(), hist_1, histSize, ranges);
-      //  double res = Imgproc.compareHist(hist_1, hist_2, Imgproc.CV_COMP_CORREL);
-      //  Imgproc.calcHist(matList, channels, mask, hist, histSize, ranges);
-//        for( int i = 1; i < histSize; i++ )
-//
-//        {
-//            line( histImage, Point( bin_w*(i-1), hist_h - cvRound(b_hist.at<float>(i-1)) ) , Point( bin_w*(i), hist_h - cvRound(b_hist.at<float>(i)) ), Scalar( 255, 0, 0), 2, 8, 0 );
-//
-//        }
-//        System.out.println(hist_1);
-
-
-
-        Mat histImage = new Mat( hist_h, hist_w, CvType.CV_8UC3, new Scalar( 0,0,0) );
-        Core.normalize(bHist, bHist, 0, histImage.rows(), Core.NORM_MINMAX);
-        Core.normalize(gHist, gHist, 0, histImage.rows(), Core.NORM_MINMAX);
-        Core.normalize(rHist, rHist, 0, histImage.rows(), Core.NORM_MINMAX);
-
-        int histSize12 = 256;
-        float[] bHistData = new float[(int) (bHist.total() * bHist.channels())];
-        bHist.get(0, 0, bHistData);
-        float[] gHistData = new float[(int) (gHist.total() * gHist.channels())];
-        gHist.get(0, 0, gHistData);
-        float[] rHistData = new float[(int) (rHist.total() * rHist.channels())];
-        rHist.get(0, 0, rHistData);
-        for( int i = 1; i < histSize12; i++ ) {
-            Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(bHistData[i - 1])),
-                    new Point(bin_w * (i), hist_h - Math.round(bHistData[i])), new Scalar(255, 0, 0), 2);
-            Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(gHistData[i - 1])),
-                    new Point(bin_w * (i), hist_h - Math.round(gHistData[i])), new Scalar(0, 255, 0), 2);
-            Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(rHistData[i - 1])),
-                    new Point(bin_w * (i), hist_h - Math.round(rHistData[i])), new Scalar(0, 0, 255), 2);
+        System.out.println("The dimesions are; "+ bHist.dims());
+        System.out.println(bHist.size());
+        System.out.println(bHist.rows());
+        System.out.println(bHist.cols());
+        for(int i = 0 ;i<bHist.rows();i++) {
+            for (int j = 0; j < bHist.cols(); j++) {
+                for (int k = 0; k < bHist.get(i, j).length; k++) {
+                    System.out.print(i + " - " + Math.round((bHist.get(i, j)[k]* 100.0) / 100.0));
+                    floatArrayA[i] = (float)Math.round((bHist.get(i, j)[k]* 100.0) / 100.0); // Or whatever default you want.
+                }
+            }
+            System.out.println("\n");
         }
+        return floatArrayA;
+    }
 
-        String pathResult1 = "C:\\forMaster\\z4.jpg";
+    public static void convertImageToGrey(File folder) throws IOException {
+        float[][] firstPicPdf = new float[6][256];
+        int i=0;
+        File[] listOfFiles = folder.listFiles();
+        for (File firstFileEntry : listOfFiles) {
+            for (File fileEntry : listOfFiles) {
+                if (fileEntry.getAbsolutePath().contains("jpg")) {
+                    Mat A = Imgcodecs.imread(fileEntry.getAbsolutePath());
 
-        //B.push_back(A);
-//        Core.inRange(A, new Scalar(0, 255, 255), new Scalar(5, 90, 80), B );
-
-
-        Imgcodecs.imwrite(pathResult1, histImage);
-
-
-        for (int i = 1; i < 256; i++) {
-
-
-            Imgproc.line(B, new Point(bin_w * (i - 1),hist_h- Math.round(hist_1.get( i-1,0)[0])),
-                    new Point(bin_w * (i), hist_h-Math.round(Math.round(hist_1.get(i, 0)[0]))),
-                    new  Scalar(255, 180, 10), 1, 8, 0);
-
-
+//
+//                    Mat destinImg = new Mat(A.rows(), A.cols(), A.type());
+//                    Imgproc.cvtColor(A,destinImg,Imgproc.COLOR_RGB2GRAY);
+//                    int histSize = 256;
+//                    int hist_w = 512;
+//                    int hist_h = 400;
+//                    int bin_w = (int) ((double) hist_w / histSize);
+//
+//
+//                    Mat hist = new Mat(256, 1, CvType.CV_8UC1);
+//                    MatOfFloat ranges = new MatOfFloat(0, 256);
+//                    MatOfInt channels = new MatOfInt(0);
+//
+//                    List<Mat> bgrPlanes = new ArrayList<>();
+//                    Core.split(destinImg, bgrPlanes);
+//
+//                    Mat bHist = new Mat();
+//
+//                    Imgproc.calcHist(bgrPlanes, new MatOfInt(0), new Mat(), bHist, new MatOfInt(histSize), ranges, false);
+//                    System.out.println("The dimesions are; "+ bHist.dims());
+//                    System.out.println(bHist.size());
+//                    System.out.println(bHist.rows());
+//                    System.out.println(bHist.cols());
+//                    for(int i = 0 ;i<bHist.rows();i++) {
+//                        for (int j = 0; j < bHist.cols(); j++) {
+//                            for (int k = 0; k < bHist.get(i, j).length; k++) {
+//                                System.out.print(i + " - " + Math.round((bHist.get(i, j)[k]* 100.0) / 100.0));
+//                                firstPicPdf = (float)Math.round(bHist.get(i, j)[k]);
+//                                calculateDistance(firstPicPdf, secondPicPdf);
+//                            }
+//                            System.out.println("\n");
+//                        }
+//                    }
+//
+//                    Mat histImage = new Mat(hist_h, hist_w, CvType.CV_8UC1, new Scalar(0));
+//                    Core.normalize(bHist, bHist, 0, histImage.rows(), Core.NORM_MINMAX);
+//
+//                    float[] bHistData = new float[(int) (bHist.total() * bHist.channels())];
+//                    bHist.get(0, 0, bHistData);
+//
+//                    for (int i = 1; i < histSize; i++) {
+//                        Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(bHistData[i - 1])),
+//                                new Point(bin_w * (i), hist_h - Math.round(bHistData[i])), new Scalar(255, 0, 0), 2);
+//
+//                    }
+//
+//                    String pathResult = "C:\\forMaster\\savedHisto\\";
+//                    pathResult = pathResult.concat(fileEntry.getName());
+//                    Imgcodecs.imwrite(pathResult, histImage);
+//                }
+                    if(i<=5)
+                        firstPicPdf[i++] = convertToGreyHelper(A);
+                }
+            }
         }
+                calculateDistance(firstPicPdf[0],firstPicPdf[1]);
+    }
+    
+    public static void calculateAndDrawHistogram(File folder) throws IOException {
+        File[] listOfFiles = folder.listFiles();
+        for (File firstFileEntry : listOfFiles) {
+            for (File fileEntry : listOfFiles) {
+                if (fileEntry.getAbsolutePath().contains("jpg")) {
+                    Mat A = Imgcodecs.imread(fileEntry.getAbsolutePath());
 
-        Mat corners_Scene = new Mat(4,1,CvType.CV_32FC2);
-        Imgproc.line(hist_1, new Point(corners_Scene.get(0,0)), new Point(corners_Scene.get(1,0)), new Scalar(0, 0, 0),4);
+                    int histSize = 256;
+                    int hist_w = 512;
+                    int hist_h = 400;
+                    int bin_w = (int) ((double) hist_w / histSize);
 
-        String pathResult3 = "C:\\forMaster\\z2.jpg";
+                    Mat hist = new Mat(256, 1, CvType.CV_8UC1);
+                    MatOfFloat ranges = new MatOfFloat(0, 256);
+                    MatOfInt channels = new MatOfInt(3);
 
-     //B.push_back(A);
-//        Core.inRange(A, new Scalar(0, 255, 255), new Scalar(5, 90, 80), B );
+                    List<Mat> bgrPlanes = new ArrayList<>();
+                    Core.split(A, bgrPlanes);
 
+                    Mat bHist = new Mat(), gHist = new Mat(), rHist = new Mat();
+                    Imgproc.calcHist(bgrPlanes, new MatOfInt(0), new Mat(), bHist, new MatOfInt(histSize), ranges, false);
+                    Imgproc.calcHist(bgrPlanes, new MatOfInt(1), new Mat(), gHist, new MatOfInt(histSize), ranges, false);
+                    Imgproc.calcHist(bgrPlanes, new MatOfInt(2), new Mat(), rHist, new MatOfInt(histSize), ranges, false);
 
-        System.out.println(A.size());
-        System.out.println(B.size());
-        Imgcodecs.imwrite(pathResult3, B);
+                    System.out.println(bHist.size());
+                    System.out.println(gHist.size());
+                    System.out.println(rHist.size());
 
+                    Mat histImage = new Mat(hist_h, hist_w, CvType.CV_8UC3, new Scalar(0, 0, 0));
+                    Core.normalize(bHist, bHist, 0, histImage.rows(), Core.NORM_MINMAX);
+                    Core.normalize(gHist, gHist, 0, histImage.rows(), Core.NORM_MINMAX);
+                    Core.normalize(rHist, rHist, 0, histImage.rows(), Core.NORM_MINMAX);
+
+                    float[] bHistData = new float[(int) (bHist.total() * bHist.channels())];
+                    bHist.get(0, 0, bHistData);
+                    float[] gHistData = new float[(int) (gHist.total() * gHist.channels())];
+                    gHist.get(0, 0, gHistData);
+                    float[] rHistData = new float[(int) (rHist.total() * rHist.channels())];
+                    rHist.get(0, 0, rHistData);
+                    for (int i = 1; i < histSize; i++) {
+                        Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(bHistData[i - 1])),
+                                new Point(bin_w * (i), hist_h - Math.round(bHistData[i])), new Scalar(255, 0, 0), 2);
+                        Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(gHistData[i - 1])),
+                                new Point(bin_w * (i), hist_h - Math.round(gHistData[i])), new Scalar(0, 255, 0), 2);
+                        Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(rHistData[i - 1])),
+                                new Point(bin_w * (i), hist_h - Math.round(rHistData[i])), new Scalar(0, 0, 255), 2);
+                    }
+
+                    String pathResult = "C:\\forMaster\\savedHisto\\";
+                    pathResult = pathResult.concat(fileEntry.getName());
+                    Imgcodecs.imwrite(pathResult, histImage);
+                }
+            }
+        }
 
     }
     public static float[] calculateFrequency(Mat A, float frequency[]) {
@@ -269,7 +329,6 @@ public class LoadImage extends Algorithms {
 //    }
     public static void main(String[] args) throws Exception {
 
-        //File[] listOfFiles = folder.listFiles();
         String filePath = "C:\\forMaster\\temaDisertatie\\Original Brodatz";
         File folder = new File(filePath);
         //readPixels(folder);
@@ -319,7 +378,7 @@ public class LoadImage extends Algorithms {
 //        plot.setPlotLineColor(new Scalar(0,0,255));
 //        plot.render(mplot);
 //        Imgcodecs.imwrite("e:/test.png", jg.plot2d);
-
+        convertImageToGrey(folder);
         float[] frequencyOfFirstPic = new float[256];
         float[] frequencyOfSecondPic = new float[256];
 
@@ -329,7 +388,7 @@ public class LoadImage extends Algorithms {
         //readPixels(folder, frequencyOfFirstPic, frequencyOfSecondPic);
         pdfOfFirstPic = calculatepdf(frequencyOfFirstPic);
         pdfOfSecondPic = calculatepdf(frequencyOfSecondPic);
-        calculateHistogram();
+        //calculateAndDrawHistogram(folder);
         calculateDistance(pdfOfFirstPic,pdfOfSecondPic);
     }
 }

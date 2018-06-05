@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1875ba05-8b46-43cb-8b32-afc071a4a8c5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/loadImages/LoadImage.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/loadImages/LoadImage.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/photos/loadImages/LoadImage.class" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -15,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/photos$LoadImage.coverage" NAME="LoadImage Coverage Results" MODIFIED="1527016547121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/photos$LoadImage.coverage" NAME="LoadImage Coverage Results" MODIFIED="1528123821956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="E:\repo\trunk\Patchs" />
@@ -28,17 +28,18 @@
       <file leaf-file-name="LoadImage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/LoadImage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+            <state relative-caret-position="635">
+              <caret line="184" column="4" lean-forward="false" selection-start-line="184" selection-start-column="4" selection-end-line="184" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1088#1166#0" expanded="false" />
-                <element signature="e#2106#2176#0" expanded="false" />
+                <element signature="e#1354#1432#0" expanded="false" />
+                <element signature="e#2372#2442#0" expanded="false" />
                 <element signature="method#extractLBP#0;class#LoadImage#0" expanded="false" />
-                <element signature="e#4576#4637#0" expanded="false" />
+                <element signature="e#5038#5040#0" expanded="false" />
+                <element signature="method#calculateAndDrawHistogram#0;class#LoadImage#0" expanded="false" />
                 <element signature="method#calculateFrequency#0;class#LoadImage#0" expanded="false" />
-                <element signature="method#calculateDistance#0;class#LoadImage#0" expanded="false" />
-                <element signature="e#13525#13546#0" expanded="false" />
+                <element signature="method#calculatepdf#0;class#LoadImage#0" expanded="false" />
+                <element signature="e#17099#17120#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -55,18 +56,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Kumar</find>
-      <find>histSize</find>
-      <find>float P[],float Q[],</find>
-      <find>,p</find>
-      <find>minkowskiLp</find>
-      <find>system.</find>
-      <find>cebyshevLin</find>
-      <find>euclidianL2</find>
-      <find>R</find>
-      <find>setSystemLookAndFeel</find>
-      <find>readPixels</find>
-      <find>Mat</find>
       <find>calculateFrequency</find>
       <find>filePathA</find>
       <find>imread_1</find>
@@ -80,10 +69,23 @@
       <find>distanceHellinger</find>
       <find>draw</find>
       <find>System.out.println</find>
-      <find>write</find>
       <find>img_matches</find>
       <find>bin_w</find>
       <find>channels</find>
+      <find>calcHistcalcHist</find>
+      <find>matList</find>
+      <find>write</find>
+      <find>read</find>
+      <find>ranges</find>
+      <find>gigel</find>
+      <find>calculateAndDrawHistogram</find>
+      <find>CV_8UC3</find>
+      <find>histImage1</find>
+      <find>hist</find>
+      <find>dim</find>
+      <find>convertImageToGrey</find>
+      <find>distanceBhattacharyya</find>
+      <find>convertToGreyHelper</find>
     </findStrings>
     <replaceStrings>
       <replace>similarities[1]</replace>
@@ -144,9 +146,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="960" />
-    <option name="width" value="960" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="332" />
+    <option name="y" value="418" />
+    <option name="width" value="1083" />
     <option name="height" value="1030" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -209,33 +212,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="photos" type="462c0819:PsiDirectoryNode" />
               <item name="algorithms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="photos" type="462c0819:PsiDirectoryNode" />
-              <item name="filters" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="photos" type="462c0819:PsiDirectoryNode" />
-              <item name="loadImages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="photos" type="462c0819:PsiDirectoryNode" />
-              <item name="processing" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -799,7 +775,7 @@
       <workItem from="1527317912972" duration="6409000" />
       <workItem from="1527406542217" duration="1800000" />
       <workItem from="1527827647814" duration="1494000" />
-      <workItem from="1528044836546" duration="20742000" />
+      <workItem from="1528044836546" duration="44833000" />
     </task>
     <task id="LOCAL-00001" summary="I changed I lit bit but it's too complicated. CPU too high. need to find other ways to get pixels.">
       <created>1515355185346</created>
@@ -833,33 +809,34 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152284000" />
+    <option name="totallyTimeSpent" value="176375000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="0" width="960" height="1030" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3194292" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3172338" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3227223" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2049272" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2579583" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22760417" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19745223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31394073" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3183315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -867,7 +844,6 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1765625" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -943,22 +919,10 @@
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/LoadImage.java</url>
-          <line>305</line>
-          <properties />
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/photos/processing/SimpleSample.java</url>
           <line>33</line>
           <properties />
           <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/LoadImage.java</url>
-          <line>278</line>
-          <properties />
-          <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/OneImage.java</url>
@@ -974,18 +938,38 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/LoadImage.java</url>
-          <line>262</line>
+          <line>322</line>
           <properties />
           <option name="timeStamp" value="207" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/LoadImage.java</url>
+          <line>182</line>
+          <properties />
+          <option name="timeStamp" value="295" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/photos/algorithms/Algorithms.java</url>
+          <line>273</line>
+          <properties />
+          <option name="timeStamp" value="311" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/photos/algorithms/Algorithms.java</url>
+          <line>274</line>
+          <properties />
+          <option name="timeStamp" value="312" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/photos/algorithms/Algorithms.java</url>
+          <line>276</line>
+          <properties />
+          <option name="timeStamp" value="313" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="268" />
+      <option name="time" value="314" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="sum( p, (float) (P[i] * log10( 2*P[i] / (P[i] + Q[i]))))" />
-      </configuration>
-    </watches-manager>
+    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -994,54 +978,53 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>mask.get(2,0)</expression-string>
+        <expression-string>(float)Math.round((bHist.get(i, j)[k]* 100.0) / 100.0)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>mask.get(2,0)[0]</expression-string>
+        <expression-string>bHist.get(i, j)[k]</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>mask.get( 2,0)[0]</expression-string>
+        <expression-string>Math.round((bHist.get(i, j)[k]* 100.0) / 100.0)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>hist_h- mask.get( 2,0)[0]</expression-string>
+        <expression-string>fileEntry.delete()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>hist_h- mask.get( 3-1,0)[0]</expression-string>
+        <expression-string>ImageIO.read(new File(&quot;/C:/forMaster/temaDisertatie/Original Brodatz/D7_COLORED.jpg&quot;))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>bin_w * (i - 1),hist_h- mask.get( i-1,0)[0]</expression-string>
+        <expression-string>Imgcodecs.imread(filePathA)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>bin_w * (i - 1),hist_h- Math.round(mask.get( i-1,0)[0])</expression-string>
+        <expression-string>JPEGCodec.createJPEGDecoder (new FileInputStream(filePathA))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>new Point(bin_w * (i - 1),hist_h- Math.round(mask.get( i-1,0)[0]))</expression-string>
+        <expression-string>LoadImage.class.getResourceAsStream(String.valueOf(filePathA))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>q = Q[i] == 0 ? q : sum( q, (float) (Q[i] * log10( 2*P[i] / (P[i] + Q[i]))))</expression-string>
+        <expression-string>ImageIO.read(filePathA)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://E:/MASTER/an2/disertatie/opencv/opencv-330.jar!/org/opencv/imgcodecs/Imgcodecs.java" />
     <entry file="jar://E:/MASTER/an2/disertatie/opencv/opencv-330.jar!/org/opencv/core/Mat.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/ReadImage.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1064,13 +1047,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1088#1166#0" expanded="false" />
-            <element signature="e#2106#2176#0" expanded="false" />
+            <element signature="e#1354#1432#0" expanded="false" />
+            <element signature="e#2372#2442#0" expanded="false" />
             <element signature="method#extractLBP#0;class#LoadImage#0" expanded="false" />
-            <element signature="e#4576#4637#0" expanded="false" />
+            <element signature="e#5038#5040#0" expanded="false" />
+            <element signature="method#calculateAndDrawHistogram#0;class#LoadImage#0" expanded="false" />
             <element signature="method#calculateFrequency#0;class#LoadImage#0" expanded="false" />
-            <element signature="method#calculateDistance#0;class#LoadImage#0" expanded="false" />
-            <element signature="e#13525#13546#0" expanded="false" />
+            <element signature="method#calculatepdf#0;class#LoadImage#0" expanded="false" />
+            <element signature="e#17099#17120#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1090,13 +1074,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1088#1166#0" expanded="false" />
-            <element signature="e#2106#2176#0" expanded="false" />
+            <element signature="e#1354#1432#0" expanded="false" />
+            <element signature="e#2372#2442#0" expanded="false" />
             <element signature="method#extractLBP#0;class#LoadImage#0" expanded="false" />
-            <element signature="e#4576#4637#0" expanded="false" />
+            <element signature="e#5038#5040#0" expanded="false" />
+            <element signature="method#calculateAndDrawHistogram#0;class#LoadImage#0" expanded="false" />
             <element signature="method#calculateFrequency#0;class#LoadImage#0" expanded="false" />
-            <element signature="method#calculateDistance#0;class#LoadImage#0" expanded="false" />
-            <element signature="e#13525#13546#0" expanded="false" />
+            <element signature="method#calculatepdf#0;class#LoadImage#0" expanded="false" />
+            <element signature="e#17099#17120#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1116,13 +1101,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1088#1166#0" expanded="false" />
-            <element signature="e#2106#2176#0" expanded="false" />
+            <element signature="e#1354#1432#0" expanded="false" />
+            <element signature="e#2372#2442#0" expanded="false" />
             <element signature="method#extractLBP#0;class#LoadImage#0" expanded="false" />
-            <element signature="e#4576#4637#0" expanded="false" />
+            <element signature="e#5038#5040#0" expanded="false" />
+            <element signature="method#calculateAndDrawHistogram#0;class#LoadImage#0" expanded="false" />
             <element signature="method#calculateFrequency#0;class#LoadImage#0" expanded="false" />
-            <element signature="method#calculateDistance#0;class#LoadImage#0" expanded="false" />
-            <element signature="e#13525#13546#0" expanded="false" />
+            <element signature="method#calculatepdf#0;class#LoadImage#0" expanded="false" />
+            <element signature="e#17099#17120#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1134,13 +1120,14 @@
           <caret line="66" column="19" lean-forward="false" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1088#1166#0" expanded="false" />
-            <element signature="e#2106#2176#0" expanded="false" />
+            <element signature="e#1354#1432#0" expanded="false" />
+            <element signature="e#2372#2442#0" expanded="false" />
             <element signature="method#extractLBP#0;class#LoadImage#0" expanded="false" />
-            <element signature="e#4576#4637#0" expanded="false" />
+            <element signature="e#5038#5040#0" expanded="false" />
+            <element signature="method#calculateAndDrawHistogram#0;class#LoadImage#0" expanded="false" />
             <element signature="method#calculateFrequency#0;class#LoadImage#0" expanded="false" />
-            <element signature="method#calculateDistance#0;class#LoadImage#0" expanded="false" />
-            <element signature="e#13525#13546#0" expanded="false" />
+            <element signature="method#calculatepdf#0;class#LoadImage#0" expanded="false" />
+            <element signature="e#17099#17120#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1158,13 +1145,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1088#1166#0" expanded="false" />
-            <element signature="e#2106#2176#0" expanded="false" />
+            <element signature="e#1354#1432#0" expanded="false" />
+            <element signature="e#2372#2442#0" expanded="false" />
             <element signature="method#extractLBP#0;class#LoadImage#0" expanded="false" />
-            <element signature="e#4576#4637#0" expanded="false" />
+            <element signature="e#5038#5040#0" expanded="false" />
+            <element signature="method#calculateAndDrawHistogram#0;class#LoadImage#0" expanded="false" />
             <element signature="method#calculateFrequency#0;class#LoadImage#0" expanded="false" />
-            <element signature="method#calculateDistance#0;class#LoadImage#0" expanded="false" />
-            <element signature="e#13525#13546#0" expanded="false" />
+            <element signature="method#calculatepdf#0;class#LoadImage#0" expanded="false" />
+            <element signature="e#17099#17120#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1227,16 +1215,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="333" column="0" lean-forward="false" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
-          <folding>
-            <element signature="e#11597#11598#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -1267,14 +1245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="499">
           <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="1213" column="0" lean-forward="false" selection-start-line="1213" selection-start-column="0" selection-end-line="1213" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1357,10 +1327,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/ReadImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="13" column="44" lean-forward="false" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/OneImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="19" column="84" lean-forward="false" selection-start-line="19" selection-start-column="84" selection-end-line="19" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/forMaster/temaDisertatie/Original Brodatz/D7_COLORED.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/algorithms/Algorithms.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="446" column="66" lean-forward="false" selection-start-line="446" selection-start-column="66" selection-end-line="446" selection-end-column="66" />
+        <state relative-caret-position="175">
+          <caret line="271" column="46" lean-forward="false" selection-start-line="271" selection-start-column="25" selection-end-line="271" selection-end-column="46" />
           <folding>
             <element signature="method#euclidianL2#0;class#Algorithms#0" expanded="false" />
             <element signature="method#cityBlockL1#0;class#Algorithms#0" expanded="false" />
@@ -1410,35 +1401,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/ReadImage.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/System.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="13" column="44" lean-forward="false" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="215">
+          <caret line="333" column="0" lean-forward="false" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
+          <folding>
+            <element signature="e#11597#11598#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/OneImage.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/File.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="19" column="84" lean-forward="false" selection-start-line="19" selection-start-column="84" selection-end-line="19" selection-end-column="84" />
+        <state relative-caret-position="270">
+          <caret line="1118" column="0" lean-forward="false" selection-start-line="1118" selection-start-column="0" selection-end-line="1118" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/LoadImage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+        <state relative-caret-position="635">
+          <caret line="184" column="4" lean-forward="false" selection-start-line="184" selection-start-column="4" selection-end-line="184" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1088#1166#0" expanded="false" />
-            <element signature="e#2106#2176#0" expanded="false" />
+            <element signature="e#1354#1432#0" expanded="false" />
+            <element signature="e#2372#2442#0" expanded="false" />
             <element signature="method#extractLBP#0;class#LoadImage#0" expanded="false" />
-            <element signature="e#4576#4637#0" expanded="false" />
+            <element signature="e#5038#5040#0" expanded="false" />
+            <element signature="method#calculateAndDrawHistogram#0;class#LoadImage#0" expanded="false" />
             <element signature="method#calculateFrequency#0;class#LoadImage#0" expanded="false" />
-            <element signature="method#calculateDistance#0;class#LoadImage#0" expanded="false" />
-            <element signature="e#13525#13546#0" expanded="false" />
+            <element signature="method#calculatepdf#0;class#LoadImage#0" expanded="false" />
+            <element signature="e#17099#17120#0" expanded="false" />
           </folding>
         </state>
       </provider>
