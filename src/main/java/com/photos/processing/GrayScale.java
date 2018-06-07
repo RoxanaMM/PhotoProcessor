@@ -74,7 +74,7 @@ public class GrayScale extends DrawGrayScaleHistogram {
                     pathResult = pathResult.concat(fileEntry.getName());
                     Imgcodecs.imwrite(pathResult, histImage);
 
-                    if(i<(listOfFiles.length - 1)) {
+                    if(i<listOfFiles.length) {
                         picsPdf[i] = convertToGreyHelper(A);
                         i++;
                     }

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1875ba05-8b46-43cb-8b32-afc071a4a8c5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -14,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/photos$MainClass.coverage" NAME="MainClass Coverage Results" MODIFIED="1528286297699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/photos$MainClass.coverage" NAME="MainClass Coverage Results" MODIFIED="1528359529149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.photos.main.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/photos$LoadImage.coverage" NAME="LoadImage Coverage Results" MODIFIED="1528123821956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -27,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="MainClass.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="51" column="63" lean-forward="false" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#762#782#0" expanded="true" />
@@ -40,11 +41,65 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GrayScale.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Calculate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/Calculate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Algorithms.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/algorithms/Algorithms.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="method#minkowskiLp#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#cebyshevLinf#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#sorensen#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#gower#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#soergel#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#kulczynskid#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#canberra#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#lorentzian#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#tanimoto#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#innerProductSimilarity#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#harmonicMeanSimilarity#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#cosineSimilarity#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#kumarHassebrookDistance#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#similarityJaccard#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#similarityDice#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#similarityFidelity#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distanceBhattacharyya#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distanceHellinger#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distanceMatusita#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distanceSquaredChord#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distanceSquaredEuclidian#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distancePearson#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distanceNeyman#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distanceSquared#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distanceProbabilisticSymmetric#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distanceDivergence#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distanceAdditiceSymmetric#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distanceKullbackLeibler#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distanceJeffreys#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distanceKDivergence#0;class#Algorithms#0" expanded="false" />
+                <element signature="method#distanceTopsoe#0;class#Algorithms#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GrayScale.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="443">
+              <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -154,9 +209,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredRed.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredSepia.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/processing/Calculate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/enums/AlgorithmConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java" />
       </list>
     </option>
@@ -175,9 +230,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="399" />
-    <option name="y" value="116" />
-    <option name="width" value="1267" />
+    <option name="x" value="960" />
+    <option name="width" value="960" />
     <option name="height" value="1030" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -875,7 +929,7 @@
       <workItem from="1527406542217" duration="1800000" />
       <workItem from="1527827647814" duration="1494000" />
       <workItem from="1528044836546" duration="74154000" />
-      <workItem from="1528229537933" duration="48726000" />
+      <workItem from="1528229537933" duration="52593000" />
     </task>
     <task id="LOCAL-00001" summary="I changed I lit bit but it's too complicated. CPU too high. need to find other ways to get pixels.">
       <created>1515355185346</created>
@@ -909,7 +963,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254422000" />
+    <option name="totallyTimeSpent" value="258289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -924,12 +978,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3227223" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3358946" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22760417" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22552083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17083333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33479694" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -937,7 +991,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28540066" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33150384" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -946,6 +1000,38 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1765625" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1765625" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20746432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.111964874" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3227223" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22760417" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17083333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33479694" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -971,7 +1057,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java</url>
-          <line>93</line>
+          <line>100</line>
           <properties />
           <option name="timeStamp" value="567" />
         </line-breakpoint>
@@ -980,6 +1066,36 @@
           <line>17</line>
           <properties />
           <option name="timeStamp" value="576" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java</url>
+          <line>98</line>
+          <properties />
+          <option name="timeStamp" value="579" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java</url>
+          <line>60</line>
+          <properties />
+          <option name="timeStamp" value="598" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java</url>
+          <line>61</line>
+          <properties />
+          <option name="timeStamp" value="599" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java</url>
+          <line>62</line>
+          <properties />
+          <option name="timeStamp" value="601" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java</url>
+          <line>83</line>
+          <properties />
+          <option name="timeStamp" value="602" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredSepia.java</url>
@@ -993,7 +1109,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="578" />
+      <option name="time" value="603" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1003,6 +1119,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>i&lt;(listOfFiles.length - 1)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>new Model(algoPowerModel)</expression-string>
         <language-id>JAVA</language-id>
@@ -1040,11 +1161,6 @@
       </expression>
       <expression>
         <expression-string>calculateTheDistance[k][k]</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>calculateTheDistance[4][4]</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -1198,64 +1314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/algorithms/Algorithms.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding>
-            <element signature="method#euclidianL2#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#cityBlockL1#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#minkowskiLp#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#cebyshevLinf#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#sorensen#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#gower#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#soergel#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#kulczynskid#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#canberra#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#lorentzian#0;class#Algorithms#0" expanded="false" />
-            <element signature="e#4024#4025#0" expanded="false" />
-            <element signature="e#4077#4078#0" expanded="false" />
-            <element signature="e#4930#4931#0" expanded="false" />
-            <element signature="e#4981#4982#0" expanded="false" />
-            <element signature="e#5421#5422#0" expanded="false" />
-            <element signature="e#5467#5468#0" expanded="false" />
-            <element signature="e#5919#5920#0" expanded="false" />
-            <element signature="e#5969#5970#0" expanded="false" />
-            <element signature="e#6412#6413#0" expanded="false" />
-            <element signature="e#6449#6450#0" expanded="false" />
-            <element signature="method#tanimoto#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#innerProductSimilarity#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#harmonicMeanSimilarity#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#cosineSimilarity#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#kumarHassebrookDistance#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#similarityJaccard#0;class#Algorithms#0" expanded="false" />
-            <element signature="e#8942#8943#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="false" />
-            <element signature="method#similarityDice#0;class#Algorithms#0" expanded="false" />
-            <element signature="e#9529#9530#0" expanded="false" />
-            <element signature="e#9573#9574#0" expanded="false" />
-            <element signature="method#similarityFidelity#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceBhattacharyya#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceHellinger#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceMatusita#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceSquaredChord#0;class#Algorithms#0" expanded="false" />
-            <element signature="e#10896#10897#0" expanded="false" />
-            <element signature="e#10946#10947#0" expanded="false" />
-            <element signature="method#distanceSquaredEuclidian#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distancePearson#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceNeyman#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceSquared#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceProbabilisticSymmetric#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceDivergence#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceAdditiceSymmetric#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceKullbackLeibler#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceJeffreys#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceKDivergence#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceTopsoe#0;class#Algorithms#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/filters/Filters.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -1382,16 +1440,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/Calculate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/enums/AlgorithmConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -1422,22 +1470,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/algorithms/Algorithms.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="293">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="method#minkowskiLp#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#cebyshevLinf#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#sorensen#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#gower#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#soergel#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#kulczynskid#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#canberra#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#lorentzian#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#tanimoto#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#innerProductSimilarity#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#harmonicMeanSimilarity#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#cosineSimilarity#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#kumarHassebrookDistance#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#similarityJaccard#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#similarityDice#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#similarityFidelity#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceBhattacharyya#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceHellinger#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceMatusita#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceSquaredChord#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceSquaredEuclidian#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distancePearson#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceNeyman#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceSquared#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceProbabilisticSymmetric#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceDivergence#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceAdditiceSymmetric#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceKullbackLeibler#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceJeffreys#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceKDivergence#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceTopsoe#0;class#Algorithms#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/Calculate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state relative-caret-position="34">
+          <caret line="51" column="63" lean-forward="false" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#762#782#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>

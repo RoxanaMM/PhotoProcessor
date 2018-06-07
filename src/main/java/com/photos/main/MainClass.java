@@ -50,8 +50,13 @@ public class MainClass extends Calculate {
         File[] listOfFiles = folder.listFiles();
         GrayScale greyScale = new GrayScale();
         float[][] greyscleValues = greyScale.convertImageToGrey(folder);
-        for (int i = 0; i < listOfFiles.length-1; i++) {
-            calculateTheDistance[i] = calculateDistance(greyscleValues[i], greyscleValues[i + 1], TypesOfSet.Greyscale);
+        System.out.println("GreyScale");
+        for (int i = 0; i < listOfFiles.length; i++) {
+            for (int j = i+1; j < listOfFiles.length; j++) {
+                calculateTheDistance[i] = calculateDistance(greyscleValues[i], greyscleValues[j], TypesOfSet.Greyscale);
+                System.out.println("Distance from pic nr " + i + " in file and pic nr " + j);
+                System.out.println(calculateTheDistance[i]);
+            }
         }
         algoPowerModel = modelHelper.buildModel(calculateTheDistance,listOfFiles.length);
         power.put(TypesOfSet.Greyscale, algoPowerModel);
@@ -65,10 +70,12 @@ public class MainClass extends Calculate {
         Coloured coloured = new Coloured();
         calculateTheDistance = new double[listOfFiles.length][AlgorithmConstants.NR_OF_ALGORITHMS];
         float[][][] colouredPdfs = coloured.calculateAndDrawHistogram(folder);
-        for (int i = 0; i < listOfFiles.length - 1; i++) {
-            calculateTheDistance[i] = calculateDistance(colouredPdfs[i][0], colouredPdfs[i + 1][0], TypesOfSet.Coloured);
-            calculateTheDistance[i]= calculateDistance(colouredPdfs[i][1], colouredPdfs[i + 1][1], TypesOfSet.Coloured);
-            calculateTheDistance[i] = calculateDistance(colouredPdfs[i][2], colouredPdfs[i + 1][2], TypesOfSet.Coloured);
+        for (int i = 0; i < listOfFiles.length; i++) {
+            for (int j = i + 1; j < listOfFiles.length; j++) {
+                calculateTheDistance[i] = calculateDistance(colouredPdfs[i][0], colouredPdfs[j][0], TypesOfSet.Coloured);
+                calculateTheDistance[i] = calculateDistance(colouredPdfs[i][1], colouredPdfs[j][1], TypesOfSet.Coloured);
+                calculateTheDistance[i] = calculateDistance(colouredPdfs[i][2], colouredPdfs[j][2], TypesOfSet.Coloured);
+            }
         }
         algoPowerModel = modelHelper.buildModel(calculateTheDistance,listOfFiles.length);
         power.put(TypesOfSet.Coloured, algoPowerModel);
@@ -91,7 +98,7 @@ public class MainClass extends Calculate {
         //2.COLOURED
         power = colouredHelper(filePath, TypesOfSet.Coloured, calculateTheDistance);
 
-        compareSimilarityVector(calculateTheDistance[i]);
+        //(calculateTheDistance[i]);
 
     }
 }
