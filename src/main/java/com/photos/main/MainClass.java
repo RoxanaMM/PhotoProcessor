@@ -30,21 +30,13 @@ public class MainClass extends Calculate {
     static Map<Integer,Results> results = new HashMap<Integer, Results>();
     private FilteredSepia filteredSepia;
 
-    public static void compareSimilarityVector(double[]similarities){
+    public static void powerOfResults(Map<Integer,Results> resulta){
         // Euclidian -> 0 similar else nesimilar
         //intersectii de hitograme => 1 inseamna similar 0 nesimilar
         //la vectori
         // 0 -> 0 similaritate
         // valori mari -> similaritate mare
         //valori mici cu - -> directii opuse
-//        for(Map.Entry<AlgoName, Model> entry: algoPowerModel.entrySet()){
-//            if (entry.getKey().name().contains("similarity")){
-//                System.out.println("Similarity values: 1-> similar , 0 -> nesimilar ");
-//
-//            }else{
-//                System.out.println("Distance values: 0-> similar, 1-> not similar");
-//            }
-//        }
 
     }
 
@@ -86,6 +78,7 @@ public class MainClass extends Calculate {
         Map<String, Object>colouredValuesWithNames  = coloured.calculateAndDrawHistogram(folder);
         helperConverterColouredVal = coloured.convertMe(folder);
         float[][][] colouredPdfs = new float[listOfFiles.length][3][AlgorithmConstants.NR_OF_PIXELS];
+        double[][][] calculateTheDistance1 = new double[listOfFiles.length * (listOfFiles.length/2)][3][AlgorithmConstants.NR_OF_PIXELS];
         for(int i =0;i<listOfFiles.length;i++){
             colouredPdfs[i] = (float[][]) colouredValuesWithNames.get(helperConverterColouredVal.get(i));
         }
@@ -96,7 +89,13 @@ public class MainClass extends Calculate {
                 calculateTheDistance[k] = calculateDistance(colouredPdfs[i][0], colouredPdfs[j][0], TypesOfSet.Coloured);
                 calculateTheDistance[k] = calculateDistance(colouredPdfs[i][1], colouredPdfs[j][1], TypesOfSet.Coloured);
                 calculateTheDistance[k] = calculateDistance(colouredPdfs[i][2], colouredPdfs[j][2], TypesOfSet.Coloured);
-                results.put(k,new Results(helperConverterColouredVal.get(i), helperConverterColouredVal.get(j),typesOfSet, calculateTheDistance[k]));
+
+                calculateTheDistance1[k][0] = calculateDistance(colouredPdfs[i][0], colouredPdfs[j][0], TypesOfSet.Coloured);
+                calculateTheDistance1[k][1] = calculateDistance(colouredPdfs[i][1], colouredPdfs[j][1], TypesOfSet.Coloured);
+                calculateTheDistance1[k][2] = calculateDistance(colouredPdfs[i][2], colouredPdfs[j][2], TypesOfSet.Coloured);
+
+                results.put(k,new Results(helperConverterColouredVal.get(i), helperConverterColouredVal.get(j),typesOfSet,  calculateTheDistance1[k]));
+
                 k++;
             }
         }
@@ -108,20 +107,27 @@ public class MainClass extends Calculate {
 
     public static void main(String[] args) throws Exception {
 
-        String filePath = "C:\\forMaster\\temaDisertatie\\\\pozeSimilareGreyScaleTransform";
-        //  String filePath = "C:\\forMaster\\temaDisertatie\\pozeSimilareGreyScaleTransform";
+
+//        String filePath = "C:\\forMaster\\temaDisertatie\\test\\gri-nesimilare";
+       String filePath = "C:\\forMaster\\temaDisertatie\\test\\toBeGreyScalled-nesimilare";
+//        String filePath = "C:\\forMaster\\temaDisertatie\\test\\gri-similare";
+      //  String filePath = "C:\\forMaster\\temaDisertatie\\test\\faces-similare";
+//        String filePath = "C:\\forMaster\\temaDisertatie\\test\\faces-nesimilare";
+
+
+
         File folder = new File(filePath);
         File[] listOfFiles = folder.listFiles();
 
         double[][] calculateTheDistance = new double[listOfFiles.length * (listOfFiles.length/2)][AlgorithmConstants.NR_OF_ALGORITHMS];
 
         //1.GREYSCALE
-        results = greyScaleHelper(filePath,TypesOfSet.Greyscale,calculateTheDistance);
+       // results = greyScaleHelper(filePath,TypesOfSet.Greyscale,calculateTheDistance);
 
         //2.COLOURED
         results = colouredHelper(filePath, TypesOfSet.Coloured, calculateTheDistance);
 
-        //(calculateTheDistance[i]);
+        powerOfResults(results);
 
     }
 }

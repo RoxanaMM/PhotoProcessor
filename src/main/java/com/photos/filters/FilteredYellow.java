@@ -5,7 +5,7 @@ import org.opencv.imgcodecs.Imgcodecs;
 
 public class FilteredYellow {
     public static void filter() {
-        Mat image = Imgcodecs.imread("C:\\forMaster\\temaDisertatie\\cac.jpg");
+        Mat image = Imgcodecs.imread("C:\\forMaster\\temaDisertatie\\test\\filters\\yellowFilter\\");
         int totalBytes = (int) (image.total() * image.elemSize());
 
         byte buffer[] = new byte[totalBytes];
@@ -14,6 +14,7 @@ public class FilteredYellow {
             if (i % 3 == 0) buffer[i] = 9;
         }
         image.put(0, 0, buffer);
+        //C:\forMaster\temaDisertatie\test\histograme\histograme-blueFilter
         String pathResult = "C:\\forMaster\\temaDisertatie\\YellowFilter\\filetered.jpg";
         // pathResult = pathResult.concat(fileEntry.getName());
         Imgcodecs.imwrite(pathResult, image);

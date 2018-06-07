@@ -77,7 +77,7 @@ public class GrayScale extends DrawGrayScaleHistogram {
                     histImage = drawColouredHistogram(bHist);
 
                     //String pathResult = "C:\\forMaster\\temaDisertatie\\histogramePozeSimilare\\";
-                    String pathResult = "C:\\forMaster\\temaDisertatie\\histogramePozeNesimilare\\";
+                    String pathResult = "C:\\forMaster\\temaDisertatie\\test\\histograme\\histograme-faces-similare\\";
                     pathResult = pathResult.concat(fileEntry.getName());
                     Imgcodecs.imwrite(pathResult, histImage);
 

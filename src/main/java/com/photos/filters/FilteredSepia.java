@@ -64,7 +64,7 @@ public class FilteredSepia {
 
 
     public static void filter() throws IOException {
-        Mat image = Imgcodecs.imread("C:\\forMaster\\temaDisertatie\\c.jpg");
+        Mat image = Imgcodecs.imread("C:\\forMaster\\temaDisertatie\\test\\filters\\sepiaFilter");
 //        int sepiaDepth = 20;
 //        int sepiaIntensity =100;
 //        final double GS_RED = 0.3;
@@ -117,6 +117,7 @@ public class FilteredSepia {
         sepia(image,100);
         String pathResult = "C:\\forMaster\\temaDisertatie\\SepiaFilter\\filetered.jpg";
         // pathResult = pathResult.concat(fileEntry.getName());
+        //C:\forMaster\temaDisertatie\test\histograme\histograme-blueFilter
         Imgcodecs.imwrite(pathResult, image);
     }
 }

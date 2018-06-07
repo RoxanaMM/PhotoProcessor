@@ -3,9 +3,9 @@ package com.photos.filters;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
 
-public class FilteredBlue {
+public class FilteredHue {
     public static void filter() {
-        Mat image = Imgcodecs.imread("C:\\forMaster\\temaDisertatie\\test\\filters\\blueFilter\\");
+        Mat image = Imgcodecs.imread("C:\\forMaster\\temaDisertatie\\test\\filters\\hueFilter\\");
         int totalBytes = (int) (image.total() * image.elemSize());
 
         byte buffer[] = new byte[totalBytes];
@@ -14,9 +14,10 @@ public class FilteredBlue {
             if (i % 2 == 0) buffer[i] = 4;
         }
         image.put(0, 0, buffer);
-        //C:\forMaster\temaDisertatie\test\histograme\histograme-blueFilter
         String pathResult = "C:\\forMaster\\temaDisertatie\\BlueFilter\\filetered.jpg";
         // pathResult = pathResult.concat(fileEntry.getName());
+        //C:\forMaster\temaDisertatie\test\histograme\histograme-blueFilter
+
         Imgcodecs.imwrite(pathResult, image);
     }
 }
