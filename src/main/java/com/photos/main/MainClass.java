@@ -45,31 +45,24 @@ public class MainClass extends Calculate {
     }
 
 
-    public static void main(String[] args) throws Exception {
-
-        String filePath = "C:\\forMaster\\temaDisertatie\\\\pozeSimilareGreyScaleTransform";
-        //  String filePath = "C:\\forMaster\\temaDisertatie\\pozeSimilareGreyScaleTransform";
+    public static Map<TypesOfSet,Object> greyScaleHelper(String filePath, TypesOfSet typesOfSet, double[][] calculateTheDistance) throws Exception{
         File folder = new File(filePath);
-        GrayScale greyScale = new GrayScale();
-        Coloured coloured = new Coloured();
         File[] listOfFiles = folder.listFiles();
-
-        double[][] calculateTheDistance = new double[listOfFiles.length][AlgorithmConstants.NR_OF_ALGORITHMS];
+        GrayScale greyScale = new GrayScale();
         float[][] greyscleValues = greyScale.convertImageToGrey(folder);
-
-
         for (int i = 0; i < listOfFiles.length-1; i++) {
             calculateTheDistance[i] = calculateDistance(greyscleValues[i], greyscleValues[i + 1], TypesOfSet.Greyscale);
         }
-
-
-
-
-       // double [][]processed = new double[AlgorithmConstants.NR_OF_ALGORITHMS][listOfFiles.length];
-
         algoPowerModel = modelHelper.buildModel(calculateTheDistance,listOfFiles.length);
         power.put(TypesOfSet.Greyscale, algoPowerModel);
+        return power;
+    }
 
+
+    public static Map<TypesOfSet,Object> colouredHelper(String filePath, TypesOfSet typesOfSet, double[][] calculateTheDistance) throws Exception{
+        File folder = new File(filePath);
+        File[] listOfFiles = folder.listFiles();
+        Coloured coloured = new Coloured();
         calculateTheDistance = new double[listOfFiles.length][AlgorithmConstants.NR_OF_ALGORITHMS];
         float[][][] colouredPdfs = coloured.calculateAndDrawHistogram(folder);
         for (int i = 0; i < listOfFiles.length - 1; i++) {
@@ -77,15 +70,28 @@ public class MainClass extends Calculate {
             calculateTheDistance[i]= calculateDistance(colouredPdfs[i][1], colouredPdfs[i + 1][1], TypesOfSet.Coloured);
             calculateTheDistance[i] = calculateDistance(colouredPdfs[i][2], colouredPdfs[i + 1][2], TypesOfSet.Coloured);
         }
+        algoPowerModel = modelHelper.buildModel(calculateTheDistance,listOfFiles.length);
+        power.put(TypesOfSet.Coloured, algoPowerModel);
 
+        return power;
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        String filePath = "C:\\forMaster\\temaDisertatie\\\\pozeSimilareGreyScaleTransform";
+        //  String filePath = "C:\\forMaster\\temaDisertatie\\pozeSimilareGreyScaleTransform";
+        File folder = new File(filePath);
+        File[] listOfFiles = folder.listFiles();
+
+        double[][] calculateTheDistance = new double[listOfFiles.length][AlgorithmConstants.NR_OF_ALGORITHMS];
+
+        //1.GREYSCALE
+        power = greyScaleHelper(filePath,TypesOfSet.Greyscale,calculateTheDistance);
+
+        //2.COLOURED
+        power = colouredHelper(filePath, TypesOfSet.Coloured, calculateTheDistance);
 
         compareSimilarityVector(calculateTheDistance[i]);
-//        FilteredSepia filteredSepia = new FilteredSepia();
-//        filteredSepia.filter();
-//        FilteredBlue filteredBlue = new FilteredBlue();
-//        filteredBlue.filter();
-//        FilteredRed filteredRed = new FilteredRed();
-//        filteredRed.filter();
 
     }
 }
