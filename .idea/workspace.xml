@@ -4,14 +4,11 @@
     <list default="true" id="1875ba05-8b46-43cb-8b32-afc071a4a8c5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/filters/Filters.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/loadImages/LoadImage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/loadImages/OneImage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/loadImages/ReadImage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photos/filters/Filters.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photos/loadImages/LoadImage.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photos/loadImages/OneImage.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photos/loadImages/ReadImage.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/enums/TypesOfPhotos.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/enums/TypesOfSet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/processing/Calculate.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/processing/Calculate.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/photos/build/model/Model.class" afterPath="$PROJECT_DIR$/target/classes/com/photos/build/model/Model.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/photos/main/MainClass.class" afterPath="$PROJECT_DIR$/target/classes/com/photos/main/MainClass.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,6 +20,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/photos$MainClass.coverage" NAME="MainClass Coverage Results" MODIFIED="1528286297699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.photos.main.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/photos$LoadImage.coverage" NAME="LoadImage Coverage Results" MODIFIED="1528123821956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -36,35 +36,23 @@
       <file leaf-file-name="MainClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="51" column="13" lean-forward="false" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+            <state relative-caret-position="320">
+              <caret line="34" column="6" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1068#1085#0" expanded="true" />
-                <element signature="e#1173#1180#0" expanded="true" />
-                <element signature="e#2232#2242#0" expanded="true" />
+                <element signature="e#1145#1164#0" expanded="true" />
+                <element signature="e#1225#1246#0" expanded="true" />
+                <element signature="e#1335#1342#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Calculate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/Calculate.java">
+      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GrayScale.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="44" column="58" lean-forward="false" selection-start-line="44" selection-start-column="58" selection-end-line="44" selection-end-column="58" />
+            <state relative-caret-position="105">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -82,7 +70,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Leibler</find>
       <find>ops</find>
       <find>readPixels</find>
       <find>histo</find>
@@ -107,11 +94,12 @@
       <find>A</find>
       <find>hist_h</find>
       <find>histImage</find>
-      <find>compareSimilarityVector</find>
       <find>algoPowerModel</find>
       <find>similarities</find>
-      <find>calculateTheDistance</find>
+      <find>setValuesPerType</find>
       <find>helperAlgorithmPower</find>
+      <find>calculateTheDistance</find>
+      <find>compareSimilarityVector</find>
     </findStrings>
     <replaceStrings>
       <replace>similarities[1]</replace>
@@ -173,9 +161,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredGreen.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredRed.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredSepia.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/processing/Calculate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/photos/enums/AlgorithmConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java" />
       </list>
     </option>
@@ -194,8 +183,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="958" />
-    <option name="width" value="962" />
+    <option name="width" value="960" />
     <option name="height" value="1030" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -284,15 +272,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="photos" type="462c0819:PsiDirectoryNode" />
               <item name="enums" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="photos" type="462c0819:PsiDirectoryNode" />
-              <item name="filters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="photos" type="b2602c69:ProjectViewProjectNode" />
@@ -902,7 +881,7 @@
       <workItem from="1527406542217" duration="1800000" />
       <workItem from="1527827647814" duration="1494000" />
       <workItem from="1528044836546" duration="74154000" />
-      <workItem from="1528229537933" duration="18695000" />
+      <workItem from="1528229537933" duration="44259000" />
     </task>
     <task id="LOCAL-00001" summary="I changed I lit bit but it's too complicated. CPU too high. need to find other ways to get pixels.">
       <created>1515355185346</created>
@@ -936,7 +915,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224391000" />
+    <option name="totallyTimeSpent" value="249955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -952,10 +931,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3227223" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22760417" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2578125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22552083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33479694" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -971,7 +951,6 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1765625" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22760417" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -997,10 +976,22 @@
           <option name="timeStamp" value="419" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java</url>
-          <line>46</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java</url>
+          <line>6</line>
           <properties />
-          <option name="timeStamp" value="421" />
+          <option name="timeStamp" value="504" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java</url>
+          <line>106</line>
+          <properties />
+          <option name="timeStamp" value="545" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java</url>
+          <line>115</line>
+          <properties />
+          <option name="timeStamp" value="567" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredSepia.java</url>
@@ -1014,7 +1005,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="442" />
+      <option name="time" value="568" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1025,68 +1016,53 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>m.set(k,modelHelper )</expression-string>
+        <expression-string>algoNameMap.get(1)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>((ArrayList) m).elementData</expression-string>
+        <expression-string>processed</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>m</expression-string>
+        <expression-string>calculateTheDistance[0][0]</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>listOfFiles.length</expression-string>
+        <expression-string>k</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>ImageIO.read(FilteredSepia.class.getResource(&quot;C:/forMaster/temaDisertatie/cac.jpg&quot;))</expression-string>
+        <expression-string>j</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>ImageIO.read(FilteredSepia.class.getResource(&quot;C:\\forMaster\\temaDisertatie\\cac.jpg&quot;))</expression-string>
+        <expression-string>calculateTheDistance[k][k]</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>img</expression-string>
+        <expression-string>calculateTheDistance[4][4]</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>image.cols()</expression-string>
+        <expression-string>calculateTheDistance[3][3]</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>image.total()</expression-string>
+        <expression-string>calculateTheDistance[2][2]</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/algorithms/Algorithms.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
@@ -1221,7 +1197,7 @@
         <state relative-caret-position="63">
           <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1249,34 +1225,34 @@
             <element signature="method#kulczynskid#0;class#Algorithms#0" expanded="false" />
             <element signature="method#canberra#0;class#Algorithms#0" expanded="false" />
             <element signature="method#lorentzian#0;class#Algorithms#0" expanded="false" />
-            <element signature="e#4024#4025#0" expanded="true" />
-            <element signature="e#4077#4078#0" expanded="true" />
-            <element signature="e#4930#4931#0" expanded="true" />
-            <element signature="e#4981#4982#0" expanded="true" />
-            <element signature="e#5421#5422#0" expanded="true" />
-            <element signature="e#5467#5468#0" expanded="true" />
-            <element signature="e#5919#5920#0" expanded="true" />
-            <element signature="e#5969#5970#0" expanded="true" />
-            <element signature="e#6412#6413#0" expanded="true" />
-            <element signature="e#6449#6450#0" expanded="true" />
+            <element signature="e#4024#4025#0" expanded="false" />
+            <element signature="e#4077#4078#0" expanded="false" />
+            <element signature="e#4930#4931#0" expanded="false" />
+            <element signature="e#4981#4982#0" expanded="false" />
+            <element signature="e#5421#5422#0" expanded="false" />
+            <element signature="e#5467#5468#0" expanded="false" />
+            <element signature="e#5919#5920#0" expanded="false" />
+            <element signature="e#5969#5970#0" expanded="false" />
+            <element signature="e#6412#6413#0" expanded="false" />
+            <element signature="e#6449#6450#0" expanded="false" />
             <element signature="method#tanimoto#0;class#Algorithms#0" expanded="false" />
             <element signature="method#innerProductSimilarity#0;class#Algorithms#0" expanded="false" />
             <element signature="method#harmonicMeanSimilarity#0;class#Algorithms#0" expanded="false" />
             <element signature="method#cosineSimilarity#0;class#Algorithms#0" expanded="false" />
             <element signature="method#kumarHassebrookDistance#0;class#Algorithms#0" expanded="false" />
             <element signature="method#similarityJaccard#0;class#Algorithms#0" expanded="false" />
-            <element signature="e#8942#8943#0" expanded="true" />
-            <element signature="e#8989#8990#0" expanded="true" />
+            <element signature="e#8942#8943#0" expanded="false" />
+            <element signature="e#8989#8990#0" expanded="false" />
             <element signature="method#similarityDice#0;class#Algorithms#0" expanded="false" />
-            <element signature="e#9529#9530#0" expanded="true" />
-            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9529#9530#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="false" />
             <element signature="method#similarityFidelity#0;class#Algorithms#0" expanded="false" />
             <element signature="method#distanceBhattacharyya#0;class#Algorithms#0" expanded="false" />
             <element signature="method#distanceHellinger#0;class#Algorithms#0" expanded="false" />
             <element signature="method#distanceMatusita#0;class#Algorithms#0" expanded="false" />
             <element signature="method#distanceSquaredChord#0;class#Algorithms#0" expanded="false" />
-            <element signature="e#10896#10897#0" expanded="true" />
-            <element signature="e#10946#10947#0" expanded="true" />
+            <element signature="e#10896#10897#0" expanded="false" />
+            <element signature="e#10946#10947#0" expanded="false" />
             <element signature="method#distanceSquaredEuclidian#0;class#Algorithms#0" expanded="false" />
             <element signature="method#distancePearson#0;class#Algorithms#0" expanded="false" />
             <element signature="method#distanceNeyman#0;class#Algorithms#0" expanded="false" />
@@ -1313,7 +1289,7 @@
         <state relative-caret-position="251">
           <caret line="70" column="21" lean-forward="false" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="74" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1326,30 +1302,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/enums/AlgoName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-647">
-          <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredYellow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredBlue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="70" lean-forward="false" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1369,27 +1327,7 @@
         <state relative-caret-position="273">
           <caret line="13" column="42" lean-forward="false" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/draw/histogram/DrawGrayScaleHistogram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/draw/histogram/DrawColouredHistogram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1402,14 +1340,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/enums/TypesOfPhotos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1418,48 +1348,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        <state relative-caret-position="191">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/draw/histogram/DrawGrayScaleHistogram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#343#366#0" expanded="true" />
-            <element signature="e#433#434#0" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#741#742#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/draw/histogram/DrawColouredHistogram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="44" column="58" lean-forward="false" selection-start-line="44" selection-start-column="58" selection-end-line="44" selection-end-column="58" />
+        <state relative-caret-position="147">
+          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/enums/AlgoName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/enums/TypesOfSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredBlue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="70" lean-forward="false" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/Calculate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="387">
+          <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/enums/AlgorithmConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="42" lean-forward="false" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="830" column="0" lean-forward="false" selection-start-line="830" selection-start-column="0" selection-end-line="830" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="51" column="13" lean-forward="false" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+        <state relative-caret-position="320">
+          <caret line="34" column="6" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1068#1085#0" expanded="true" />
-            <element signature="e#1173#1180#0" expanded="true" />
-            <element signature="e#2232#2242#0" expanded="true" />
+            <element signature="e#1145#1164#0" expanded="true" />
+            <element signature="e#1225#1246#0" expanded="true" />
+            <element signature="e#1335#1342#0" expanded="true" />
           </folding>
         </state>
       </provider>

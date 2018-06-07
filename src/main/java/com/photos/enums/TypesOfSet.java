@@ -1,6 +1,6 @@
 package com.photos.enums;
 
-public enum TypesOfPhotos {
+public enum TypesOfSet {
     Greyscale,
     Coloured,
     Surfaces,

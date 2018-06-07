@@ -2,17 +2,12 @@ package com.photos.processing;
 
 import com.photos.algorithms.Algorithms;
 import com.photos.build.model.Model;
-import com.photos.enums.AlgoName;
-import com.photos.enums.TypesOfPhotos;
-import com.photos.algorithms.Algorithms.*;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.photos.enums.TypesOfSet;
 
 public class Calculate extends Algorithms{
 
     public static double[] calculateDistance(float frequencyOfFirstPic[], float frequencyOfSecondPic[],
-                                         TypesOfPhotos typesOfPhotos) {
+                                         TypesOfSet typesOfPhotos) {
         double[] similarities = new double[51];
         float[] R = new float[256];
         int p = 0;
