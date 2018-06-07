@@ -8,9 +8,14 @@ import org.opencv.imgproc.Imgproc;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class GrayScale extends DrawGrayScaleHistogram {
+
+    static Map<Integer, String>helperConverterGreyScalesVal= new HashMap<Integer, String>();
+
     public static float[] convertToGreyHelper(Mat A){
         float[] floatArrayA = new float[256];
         Mat destinImg = new Mat(A.rows(), A.cols(), A.type());
@@ -42,8 +47,10 @@ public class GrayScale extends DrawGrayScaleHistogram {
         return floatArrayA;
     }
 
-    public static float[][] convertImageToGrey(File folder) throws IOException {
+    public static Map<String, Object> convertImageToGrey(File folder) throws IOException {
+     //   public static float[][] convertImageToGrey(File folder) throws IOException {
         File[] listOfFiles = folder.listFiles();
+        Map<String, Object> picsPdfAndName = new HashMap<String, Object>();
         float[][] picsPdf = new float[listOfFiles.length][256];
         float first;
         int i=0;
@@ -76,12 +83,27 @@ public class GrayScale extends DrawGrayScaleHistogram {
 
                     if(i<listOfFiles.length) {
                         picsPdf[i] = convertToGreyHelper(A);
+                        picsPdfAndName.put(fileEntry.getName(), picsPdf[i]);
                         i++;
                     }
+
                 }
             }
         }
-        return picsPdf;
+      //  return picsPdf;
+        return picsPdfAndName;
+    }
+
+    public static Map<Integer, String>convertMe(File folder){
+        File[] listOfFiles = folder.listFiles();
+        int i=0;
+        for (File fileEntry : listOfFiles) {
+            if (fileEntry.getAbsolutePath().contains("jpg")) {
+                helperConverterGreyScalesVal.put(i,fileEntry.getName());
+                i++;
+            }
+        }
+        return helperConverterGreyScalesVal;
     }
 
 }

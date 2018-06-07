@@ -8,9 +8,13 @@ import org.opencv.imgproc.Imgproc;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Coloured extends DrawColouredHistogram {
+
+    static Map<Integer, String>helperConverterColouredScalesVal= new HashMap<Integer, String>();
 
     public static float[][] colouredHelper(Mat A){
         float[][]floatArray = new float[3][256];
@@ -58,11 +62,12 @@ public class Coloured extends DrawColouredHistogram {
     }
 
 
-    public static float[][][] calculateAndDrawHistogram(File folder) throws IOException {
+    public static Map<String, Object> calculateAndDrawHistogram(File folder) throws IOException {
         File[] listOfFiles = folder.listFiles();
         int histSize = 256;
         int k=0;
         Mat histImage;
+        Map<String, Object> picsPdfAndName = new HashMap<String, Object>();
         float[][][] floatArray = new float[listOfFiles.length][3][256];
         for (File firstFileEntry : listOfFiles) {
             for (File fileEntry : listOfFiles) {
@@ -87,6 +92,7 @@ public class Coloured extends DrawColouredHistogram {
 
                     if(k<listOfFiles.length-1) {
                         floatArray[k] = colouredHelper(A);
+                        picsPdfAndName.put(fileEntry.getName(), floatArray[k]);
                         k++;
                     }
 
@@ -97,6 +103,17 @@ public class Coloured extends DrawColouredHistogram {
                 }
             }
         }
-        return floatArray;
+        return picsPdfAndName;
+    }
+    public static Map<Integer, String>convertMe(File folder){
+        File[] listOfFiles = folder.listFiles();
+        int i=0;
+        for (File fileEntry : listOfFiles) {
+            if (fileEntry.getAbsolutePath().contains("jpg")) {
+                helperConverterColouredScalesVal.put(i,fileEntry.getName());
+                i++;
+            }
+        }
+        return helperConverterColouredScalesVal;
     }
 }

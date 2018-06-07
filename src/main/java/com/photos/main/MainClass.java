@@ -1,6 +1,7 @@
 package com.photos.main;
 
 import com.photos.build.model.Model;
+import com.photos.build.model.Results;
 import com.photos.enums.AlgoName;
 import com.photos.enums.AlgorithmConstants;
 import com.photos.enums.TypesOfSet;
@@ -11,7 +12,9 @@ import com.photos.processing.GrayScale;
 import org.opencv.core.Core;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MainClass extends Calculate {
@@ -24,6 +27,7 @@ public class MainClass extends Calculate {
     static Model modelHelper = new Model();
     static Map<AlgoName, double[]> algoPowerModel = new HashMap<AlgoName, double[]>();
     static Map<TypesOfSet,Object > power = new HashMap<TypesOfSet,Object >();
+    static Map<Integer,Results> results = new HashMap<Integer, Results>();
     private FilteredSepia filteredSepia;
 
     public static void compareSimilarityVector(double[]similarities){
@@ -45,42 +49,61 @@ public class MainClass extends Calculate {
     }
 
 
-    public static Map<TypesOfSet,Object> greyScaleHelper(String filePath, TypesOfSet typesOfSet, double[][] calculateTheDistance) throws Exception{
+    public static Map<Integer,Results> greyScaleHelper(String filePath, TypesOfSet typesOfSet, double[][] calculateTheDistance) throws Exception{
+
+        Map<Integer, String>helperConverterGreyScalesVal= new HashMap<Integer, String>();
         File folder = new File(filePath);
         File[] listOfFiles = folder.listFiles();
         GrayScale greyScale = new GrayScale();
-        float[][] greyscleValues = greyScale.convertImageToGrey(folder);
+        Map<String, Object>greyscaleValuesWithNames = greyScale.convertImageToGrey(folder);
+        helperConverterGreyScalesVal = greyScale.convertMe(folder);
+        float[][] greyscleValues = new float[listOfFiles.length][AlgorithmConstants.NR_OF_PIXELS];
+
+
+        for(int i =0;i<listOfFiles.length;i++){
+            greyscleValues[i] = (float[]) greyscaleValuesWithNames.get(helperConverterGreyScalesVal.get(i));
+        }
+    int k =0;
         System.out.println("GreyScale");
-        for (int i = 0; i < listOfFiles.length; i++) {
+        for (int i = 0; i < listOfFiles.length * (listOfFiles.length/2); i++) {
             for (int j = i+1; j < listOfFiles.length; j++) {
-                calculateTheDistance[i] = calculateDistance(greyscleValues[i], greyscleValues[j], TypesOfSet.Greyscale);
-                System.out.println("Distance from pic nr " + i + " in file and pic nr " + j);
-                System.out.println(calculateTheDistance[i]);
+                calculateTheDistance[k] = calculateDistance(greyscleValues[i], greyscleValues[j], TypesOfSet.Greyscale);
+                System.out.println("Distance from pic  " + helperConverterGreyScalesVal.get(i) + " in file and pic " + helperConverterGreyScalesVal.get(j));
+                results.put(k,new Results(helperConverterGreyScalesVal.get(i), helperConverterGreyScalesVal.get(j),typesOfSet, calculateTheDistance[k]));
+                k++;
             }
         }
-        algoPowerModel = modelHelper.buildModel(calculateTheDistance,listOfFiles.length);
-        power.put(TypesOfSet.Greyscale, algoPowerModel);
-        return power;
+     //   algoPowerModel = modelHelper.buildModel(calculateTheDistance,listOfFiles.length);
+    //    power.put(TypesOfSet.Greyscale, algoPowerModel);
+        return results;
     }
 
-
-    public static Map<TypesOfSet,Object> colouredHelper(String filePath, TypesOfSet typesOfSet, double[][] calculateTheDistance) throws Exception{
+    public static Map<Integer,Results> colouredHelper(String filePath, TypesOfSet typesOfSet, double[][] calculateTheDistance) throws Exception{
+        Map<Integer, String>helperConverterColouredVal= new HashMap<Integer, String>();
         File folder = new File(filePath);
         File[] listOfFiles = folder.listFiles();
         Coloured coloured = new Coloured();
-        calculateTheDistance = new double[listOfFiles.length][AlgorithmConstants.NR_OF_ALGORITHMS];
-        float[][][] colouredPdfs = coloured.calculateAndDrawHistogram(folder);
-        for (int i = 0; i < listOfFiles.length; i++) {
-            for (int j = i + 1; j < listOfFiles.length; j++) {
-                calculateTheDistance[i] = calculateDistance(colouredPdfs[i][0], colouredPdfs[j][0], TypesOfSet.Coloured);
-                calculateTheDistance[i] = calculateDistance(colouredPdfs[i][1], colouredPdfs[j][1], TypesOfSet.Coloured);
-                calculateTheDistance[i] = calculateDistance(colouredPdfs[i][2], colouredPdfs[j][2], TypesOfSet.Coloured);
+        Map<String, Object>colouredValuesWithNames  = coloured.calculateAndDrawHistogram(folder);
+        helperConverterColouredVal = coloured.convertMe(folder);
+        float[][][] colouredPdfs = new float[listOfFiles.length][3][AlgorithmConstants.NR_OF_PIXELS];
+        for(int i =0;i<listOfFiles.length;i++){
+            colouredPdfs[i] = (float[][]) colouredValuesWithNames.get(helperConverterColouredVal.get(i));
+        }
+
+        int k =0;
+        for (int i = 0; i < listOfFiles.length * (listOfFiles.length/2); i++) {
+            for (int j = i + 1; j < listOfFiles.length-1; j++) {
+                calculateTheDistance[k] = calculateDistance(colouredPdfs[i][0], colouredPdfs[j][0], TypesOfSet.Coloured);
+                calculateTheDistance[k] = calculateDistance(colouredPdfs[i][1], colouredPdfs[j][1], TypesOfSet.Coloured);
+                calculateTheDistance[k] = calculateDistance(colouredPdfs[i][2], colouredPdfs[j][2], TypesOfSet.Coloured);
+                results.put(k,new Results(helperConverterColouredVal.get(i), helperConverterColouredVal.get(j),typesOfSet, calculateTheDistance[k]));
+                k++;
             }
         }
-        algoPowerModel = modelHelper.buildModel(calculateTheDistance,listOfFiles.length);
-        power.put(TypesOfSet.Coloured, algoPowerModel);
+      //  algoPowerModel = modelHelper.buildModel(calculateTheDistance,listOfFiles.length);
+      //  power.put(TypesOfSet.Coloured, algoPowerModel);
 
-        return power;
+        return results;
     }
 
     public static void main(String[] args) throws Exception {
@@ -90,13 +113,13 @@ public class MainClass extends Calculate {
         File folder = new File(filePath);
         File[] listOfFiles = folder.listFiles();
 
-        double[][] calculateTheDistance = new double[listOfFiles.length][AlgorithmConstants.NR_OF_ALGORITHMS];
+        double[][] calculateTheDistance = new double[listOfFiles.length * (listOfFiles.length/2)][AlgorithmConstants.NR_OF_ALGORITHMS];
 
         //1.GREYSCALE
-        power = greyScaleHelper(filePath,TypesOfSet.Greyscale,calculateTheDistance);
+        results = greyScaleHelper(filePath,TypesOfSet.Greyscale,calculateTheDistance);
 
         //2.COLOURED
-        power = colouredHelper(filePath, TypesOfSet.Coloured, calculateTheDistance);
+        results = colouredHelper(filePath, TypesOfSet.Coloured, calculateTheDistance);
 
         //(calculateTheDistance[i]);
 
