@@ -86,7 +86,6 @@ public class GrayScale extends DrawGrayScaleHistogram {
                         picsPdfAndName.put(fileEntry.getName(), picsPdf[i]);
                         i++;
                     }
-
                 }
             }
         }

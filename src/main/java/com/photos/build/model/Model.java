@@ -3,7 +3,6 @@ package com.photos.build.model;
 import com.photos.enums.AlgoName;
 import com.photos.enums.AlgorithmConstants;
 import com.photos.enums.TypesOfSet;
-import com.photos.main.MainClass;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +18,11 @@ public class Model{
     }
     public Model(){
 
+    }
+
+    public static Map<Integer, AlgoName> getAlgoNameMap() {
+        buildNameMaps();
+        return algoNameMap;
     }
 
     public static void buildNameMaps() {

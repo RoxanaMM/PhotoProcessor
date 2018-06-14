@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1875ba05-8b46-43cb-8b32-afc071a4a8c5" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/opencv_library_2_4_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/opencv_library_2_4_3.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/build/model/Results.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/build/model/Results.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredBlue.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredBlue.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredGreen.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredGreen.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredRed.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredRed.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredSepia.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredSepia.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredYellow.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredYellow.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java" afterPath="$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/photos/main/MainClass.class" afterPath="$PROJECT_DIR$/target/classes/com/photos/main/MainClass.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,13 +36,11 @@
       <file leaf-file-name="MainClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1890">
-              <caret line="96" column="16" lean-forward="false" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
+            <state relative-caret-position="326">
+              <caret line="73" column="44" lean-forward="true" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#852#872#0" expanded="true" />
-                <element signature="e#1546#1563#0" expanded="true" />
-                <element signature="e#3200#3217#0" expanded="true" />
+                <element signature="e#1009#1027#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,19 +49,40 @@
       <file leaf-file-name="Results.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/build/model/Results.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="24" column="136" lean-forward="false" selection-start-line="24" selection-start-column="136" selection-end-line="24" selection-end-column="136" />
-              <folding />
+            <state relative-caret-position="215">
+              <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+              <folding>
+                <element signature="e#1136#1137#0" expanded="true" />
+                <element signature="e#1163#1164#0" expanded="true" />
+                <element signature="e#1203#1204#0" expanded="true" />
+                <element signature="e#1235#1236#0" expanded="true" />
+                <element signature="e#1266#1267#0" expanded="true" />
+                <element signature="e#1293#1294#0" expanded="true" />
+                <element signature="e#1333#1334#0" expanded="true" />
+                <element signature="e#1365#1366#0" expanded="true" />
+                <element signature="e#1406#1407#0" expanded="true" />
+                <element signature="e#1439#1440#0" expanded="true" />
+                <element signature="e#1495#1496#0" expanded="true" />
+                <element signature="e#1539#1540#0" expanded="true" />
+                <element signature="e#1588#1589#0" expanded="true" />
+                <element signature="e#1631#1632#0" expanded="true" />
+                <element signature="e#1823#1824#0" expanded="true" />
+                <element signature="e#1869#1870#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Coloured.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/Coloured.java">
+      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-152">
-              <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="315">
+              <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#362#381#0" expanded="true" />
+                <element signature="e#442#463#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,12 +99,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>yesssa</find>
-      <find>waveHedges</find>
-      <find>intersectionDistance</find>
-      <find>vector</find>
-      <find>floatArrayA</find>
-      <find>line</find>
       <find>first</find>
       <find>floatArray</find>
       <find>colouredHelper</find>
@@ -100,7 +112,6 @@
       <find>A</find>
       <find>hist_h</find>
       <find>histImage</find>
-      <find>algoPowerModel</find>
       <find>similarities</find>
       <find>setValuesPerType</find>
       <find>helperAlgorithmPower</find>
@@ -111,6 +122,13 @@
       <find>AlgorithmConstants</find>
       <find>convertImageToGrey</find>
       <find>compareSimilarityVector</find>
+      <find>algoPowerModel</find>
+      <find>results</find>
+      <find>double [][]</find>
+      <find>processed</find>
+      <find>Map&lt;</find>
+      <find>algoNameMap</find>
+      <find>calculateTheDistanceR</find>
     </findStrings>
     <replaceStrings>
       <replace>similarities[1]</replace>
@@ -165,7 +183,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/photos/draw/histogram/DrawColouredHistogram.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/filters/Filters.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/processing/FilteredYellow.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/processing/Calculate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/enums/AlgorithmConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/processing/Coloured.java" />
@@ -179,6 +196,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredYellow.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/build/model/Results.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java" />
       </list>
     </option>
@@ -196,10 +214,8 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="225" />
-    <option name="y" value="287" />
-    <option name="width" value="1267" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1285" />
     <option name="height" value="1030" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -220,6 +236,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -321,19 +340,16 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ee.minimum-1.0.0.jar!/" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="SearchEverywhereHistoryKey" value="listOfFiles&#9;null&#9;null&#10;draw&#9;FILE&#9;file://C:/work/photos/src/main/java/com/photos/drawHistogram/DrawingPanel.java&#10;hist&#9;PSI&#9;JAVA://jdk.nashorn.internal.ir.debug.ObjectSizeCalculator#histogram&#10;frequency&#9;PSI&#9;JAVA://com.photos.loadImages.LoadImage#frequency" />
   </component>
@@ -906,7 +922,11 @@
       <workItem from="1527406542217" duration="1800000" />
       <workItem from="1527827647814" duration="1494000" />
       <workItem from="1528044836546" duration="74154000" />
-      <workItem from="1528229537933" duration="69397000" />
+      <workItem from="1528229537933" duration="73479000" />
+      <workItem from="1528436695465" duration="80000" />
+      <workItem from="1528436874253" duration="16000" />
+      <workItem from="1528954553086" duration="25000" />
+      <workItem from="1528954628077" duration="10921000" />
     </task>
     <task id="LOCAL-00001" summary="I changed I lit bit but it's too complicated. CPU too high. need to find other ways to get pixels.">
       <created>1515355185346</created>
@@ -940,11 +960,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275093000" />
+    <option name="totallyTimeSpent" value="290217000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1285" height="1030" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -954,28 +973,29 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25195968" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3227223" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2524698" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22760417" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12864584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09707972" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.011213048" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33479694" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22956327" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3622393" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1765625" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22760417" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1002,39 +1022,39 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java</url>
-          <line>17</line>
+          <line>16</line>
           <properties />
           <option name="timeStamp" value="576" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java</url>
-          <line>67</line>
+          <line>46</line>
           <properties />
-          <option name="timeStamp" value="621" />
+          <option name="timeStamp" value="671" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java</url>
-          <line>68</line>
+          <line>44</line>
           <properties />
-          <option name="timeStamp" value="622" />
+          <option name="timeStamp" value="672" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java</url>
-          <line>129</line>
+          <line>37</line>
           <properties />
-          <option name="timeStamp" value="641" />
+          <option name="timeStamp" value="673" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java</url>
-          <line>69</line>
+          <line>38</line>
           <properties />
-          <option name="timeStamp" value="642" />
+          <option name="timeStamp" value="674" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java</url>
-          <line>104</line>
+          <line>39</line>
           <properties />
-          <option name="timeStamp" value="643" />
+          <option name="timeStamp" value="675" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredSepia.java</url>
@@ -1048,7 +1068,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="654" />
+      <option name="time" value="677" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1057,49 +1077,101 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>result</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>results.get(0).calculateTheDistanceRGB.length</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>results.get(0).calculateTheDistanceRGB</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>results.get(0)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>results.get(0).getCalculateTheDistanceRGB</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>results.get(0).getCalculateTheDistanceRGB()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>results.get(0).getCalculateTheDistanceRGB().length</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>results</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>results.get(i)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>calculateTheDistance1[k][0]</expression-string>
+        <expression-string>results.get(i).picA</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>calculateTheDistance1[k][0] = calculateDistance(colouredPdfs[i][0], colouredPdfs[j][0], TypesOfSet.Coloured)</expression-string>
+        <expression-string>results.get(i)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>calculateDistance(colouredPdfs[i][0], colouredPdfs[j][0], TypesOfSet.Coloured)</expression-string>
+        <expression-string>results.get(0).</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>colouredPdfs[i][0]</expression-string>
+        <expression-string>results.get(0)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>colouredPdfs[j][0]</expression-string>
+        <expression-string>results</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>colouredPdfs[8][0]</expression-string>
+        <expression-string>results.entrySet()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>colouredPdfs[7][0]</expression-string>
+        <expression-string>algoName.get(i).name()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>colouredPdfs[0][0]</expression-string>
+        <expression-string>results.get(i).</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>calculateDistance</expression-string>
+        <expression-string>results.get(1).calculateTheDistanceRGB</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>results.values()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -1142,11 +1214,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
-          <folding>
-            <element signature="e#5687#5688#0" expanded="false" />
-            <element signature="e#22786#22787#0" expanded="false" />
-            <element signature="e#22821#22822#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1182,10 +1249,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="1217" column="24" lean-forward="false" selection-start-line="1217" selection-start-column="24" selection-end-line="1217" selection-end-column="24" />
-          <folding>
-            <element signature="e#47714#47715#0" expanded="false" />
-            <element signature="e#47763#47764#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1199,18 +1262,11 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/drawHistogram/DrawingPanel.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/drawHistogram/Histogram.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/ImageViewer.java" />
-    <entry file="file://C:/forMaster/temaDisertatie/Original Brodatz/D7_COLORED.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://C:/forMaster/temaDisertatie/Original Brodatz/D7_COLORED.jpg" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/System.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
           <caret line="333" column="0" lean-forward="false" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
-          <folding>
-            <element signature="e#11597#11598#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1222,41 +1278,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/LoadImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/filters/Filters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/filters/ApplyFilters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/loadImages/LoadImage.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/filters/Filters.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/filters/ApplyFilters.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="274" column="0" lean-forward="false" selection-start-line="274" selection-start-column="0" selection-end-line="274" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1264,7 +1296,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="652" column="0" lean-forward="false" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1272,119 +1303,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="830" column="0" lean-forward="false" selection-start-line="830" selection-start-column="0" selection-end-line="830" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/algorithms/Algorithms.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="method#minkowskiLp#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#cebyshevLinf#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#sorensen#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#gower#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#soergel#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#kulczynskid#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#canberra#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#lorentzian#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#tanimoto#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#innerProductSimilarity#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#harmonicMeanSimilarity#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#cosineSimilarity#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#kumarHassebrookDistance#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#similarityJaccard#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#similarityDice#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#similarityFidelity#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceBhattacharyya#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceHellinger#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceMatusita#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceSquaredChord#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceSquaredEuclidian#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distancePearson#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceNeyman#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceSquared#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceProbabilisticSymmetric#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceDivergence#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceAdditiceSymmetric#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceKullbackLeibler#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceJeffreys#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceKDivergence#0;class#Algorithms#0" expanded="false" />
-            <element signature="method#distanceTopsoe#0;class#Algorithms#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-280">
-          <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/draw/histogram/DrawColouredHistogram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/draw/histogram/DrawGrayScaleHistogram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/enums/AlgoName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-448">
-          <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/enums/AlgorithmConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/enums/TypesOfSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/filters/Faces.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="69" lean-forward="false" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredBlue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="75" lean-forward="false" selection-start-line="16" selection-start-column="75" selection-end-line="16" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1436,53 +1354,187 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/algorithms/Algorithms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1281">
+          <caret line="461" column="25" lean-forward="false" selection-start-line="461" selection-start-column="25" selection-end-line="461" selection-end-column="25" />
+          <folding>
+            <element signature="method#euclidianL2#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#cityBlockL1#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#minkowskiLp#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#cebyshevLinf#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#sorensen#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#gower#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#soergel#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#kulczynskid#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#canberra#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#lorentzian#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#intersectionSimilarity#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#waveHedgesDistance#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#similarityCzekanowski#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#similarityMotyka#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#similarityKulczynkyS#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#ruzicka#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#tanimoto#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#innerProductSimilarity#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#harmonicMeanSimilarity#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#cosineSimilarity#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#kumarHassebrookDistance#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#similarityJaccard#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#similarityDice#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#similarityFidelity#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceBhattacharyya#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceHellinger#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceMatusita#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceSquaredChord#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceSquaredEuclidian#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distancePearson#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceNeyman#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceSquared#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceProbabilisticSymmetric#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceDivergence#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceClark#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceAdditiceSymmetric#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceKullbackLeibler#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceJeffreys#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceKDivergence#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceTopsoe#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceJensenShannon#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceJensenDifference#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceKumarJohnson#0;class#Algorithms#0" expanded="false" />
+            <element signature="method#distanceAvg#0;class#Algorithms#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/draw/histogram/DrawColouredHistogram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/draw/histogram/DrawGrayScaleHistogram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/filters/Faces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="69" lean-forward="false" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/filters/FilteredBlue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="16" column="75" lean-forward="false" selection-start-line="16" selection-start-column="75" selection-end-line="16" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/enums/TypesOfSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/enums/AlgorithmConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/enums/AlgoName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-347">
+          <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/GrayScale.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        <state relative-caret-position="315">
+          <caret line="87" column="21" lean-forward="false" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
           <folding>
-            <element signature="e#468#485#0" expanded="true" />
             <element signature="method#convertToGreyHelper#0;class#GrayScale#0" expanded="false" />
-            <element signature="e#1857#1873#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/Calculate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/build/model/Results.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="24" column="136" lean-forward="false" selection-start-line="24" selection-start-column="136" selection-end-line="24" selection-end-column="136" />
+        <state relative-caret-position="315">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/processing/Coloured.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-152">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="442">
+          <caret line="112" column="76" lean-forward="true" selection-start-line="112" selection-start-column="76" selection-end-line="112" selection-end-column="76" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/build/model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#362#381#0" expanded="true" />
+            <element signature="e#442#463#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/build/model/Results.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding>
+            <element signature="e#1136#1137#0" expanded="true" />
+            <element signature="e#1163#1164#0" expanded="true" />
+            <element signature="e#1203#1204#0" expanded="true" />
+            <element signature="e#1235#1236#0" expanded="true" />
+            <element signature="e#1266#1267#0" expanded="true" />
+            <element signature="e#1293#1294#0" expanded="true" />
+            <element signature="e#1333#1334#0" expanded="true" />
+            <element signature="e#1365#1366#0" expanded="true" />
+            <element signature="e#1406#1407#0" expanded="true" />
+            <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+            <element signature="e#1539#1540#0" expanded="true" />
+            <element signature="e#1588#1589#0" expanded="true" />
+            <element signature="e#1631#1632#0" expanded="true" />
+            <element signature="e#1823#1824#0" expanded="true" />
+            <element signature="e#1869#1870#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photos/main/MainClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1890">
-          <caret line="96" column="16" lean-forward="false" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
+        <state relative-caret-position="326">
+          <caret line="73" column="44" lean-forward="true" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#852#872#0" expanded="true" />
-            <element signature="e#1546#1563#0" expanded="true" />
-            <element signature="e#3200#3217#0" expanded="true" />
+            <element signature="e#1009#1027#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1544,6 +1596,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
