@@ -1,33 +1,24 @@
 package com.photos.build.model;
 
+import com.photos.enums.AlgoName;
 import com.photos.enums.TypesOfSet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Results {
     String picA;
     String picB;
     TypesOfSet typesOfSet;
-    double[] calculateTheDistance;
-    double[][] calculateTheDistanceRGB;
+    AlgoName algoName;
 
-    public Results(String picA, String picB, TypesOfSet typesOfSet, double[] calculateTheDistance) {
-        this.picA = picA;
-        this.picB = picB;
-        this.typesOfSet = typesOfSet;
-        this.calculateTheDistance = calculateTheDistance;
-    }
-    public Results(String picA, String picB, TypesOfSet typesOfSet, double[][] calculateTheDistanceRGB) {
-        this.picA = picA;
-        this.picB = picB;
-        this.typesOfSet = typesOfSet;
-        this.calculateTheDistanceRGB = calculateTheDistanceRGB;
-    }
+    public Results() {}
 
-    public Results(String picA, String picB, TypesOfSet typesOfSet, double[] calculateTheDistance, double[][] calculateTheDistanceRGB) {
+    public Results(String picA, String picB, TypesOfSet typesOfSet, AlgoName algoName) {
         this.picA = picA;
         this.picB = picB;
         this.typesOfSet = typesOfSet;
-        this.calculateTheDistance = calculateTheDistance;
-        this.calculateTheDistanceRGB = calculateTheDistanceRGB;
+        this.algoName = algoName;
     }
 
     public String getPicA() {
@@ -54,19 +45,11 @@ public class Results {
         this.typesOfSet = typesOfSet;
     }
 
-    public double[] getCalculateTheDistance() {
-        return calculateTheDistance;
+    public AlgoName getAlgoName() {
+        return algoName;
     }
 
-    public void setCalculateTheDistance(double[] calculateTheDistance) {
-        this.calculateTheDistance = calculateTheDistance;
-    }
-
-    public double[][] getCalculateTheDistanceRGB() {
-        return calculateTheDistanceRGB;
-    }
-
-    public void setCalculateTheDistanceRGB(double[][] calculateTheDistanceRGB) {
-        this.calculateTheDistanceRGB = calculateTheDistanceRGB;
+    public void setAlgoName(AlgoName algoName) {
+        this.algoName = algoName;
     }
 }

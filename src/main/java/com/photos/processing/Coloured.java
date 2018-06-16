@@ -14,10 +14,9 @@ import java.util.Map;
 
 public class Coloured extends DrawColouredHistogram {
 
-    static Map<Integer, String>helperConverterColouredScalesVal= new HashMap<Integer, String>();
 
-    public static float[][] colouredHelper(Mat A){
-        float[][]floatArray = new float[3][256];
+    public static float[][] colouredHelper(Mat A) {
+        float[][] floatArray = new float[3][256];
         int histSize = 256;
         int hist_w = 512;
         int hist_h = 400;
@@ -30,13 +29,13 @@ public class Coloured extends DrawColouredHistogram {
         List<Mat> bgrPlanes = new ArrayList<>();
         Core.split(A, bgrPlanes);
 
-        Mat bHist = new Mat(),gHist = new Mat(),rHist = new Mat();
+        Mat bHist = new Mat(), gHist = new Mat(), rHist = new Mat();
 
         Imgproc.calcHist(bgrPlanes, new MatOfInt(0), new Mat(), bHist, new MatOfInt(histSize), ranges, false);
-        for(int i = 0 ;i<bHist.rows();i++) {
+        for (int i = 0; i < bHist.rows(); i++) {
             for (int j = 0; j < bHist.cols(); j++) {
                 for (int k = 0; k < bHist.get(i, j).length; k++) {
-                    floatArray[0][i] = (float)Math.round((bHist.get(i, j)[k]* 100.0) / 100.0);
+                    floatArray[0][i] = (float) Math.round((bHist.get(i, j)[k] * 100.0) / 100.0);
                 }
             }
         }
@@ -62,58 +61,37 @@ public class Coloured extends DrawColouredHistogram {
     }
 
 
-    public static Map<String, Object> calculateAndDrawHistogram(File folder) throws IOException {
-        File[] listOfFiles = folder.listFiles();
+    public static  float[][] calculateAndDrawHistogram(String sourcePic1) throws IOException {
         int histSize = 256;
-        int k=0;
         Mat histImage;
-        Map<String, Object> picsPdfAndName = new HashMap<String, Object>();
-        float[][][] floatArray = new float[listOfFiles.length][3][256];
-        for (File firstFileEntry : listOfFiles) {
-            for (File fileEntry : listOfFiles) {
-                if (fileEntry.getAbsolutePath().contains("jpg")) {
+        float[][] floatArray = new float[3][256];
 
-                    Mat A = Imgcodecs.imread(fileEntry.getAbsolutePath());
-                    Mat hist = new Mat(256, 1, CvType.CV_8UC1);
-                    MatOfFloat ranges = new MatOfFloat(0, 256);
-                    MatOfInt channels = new MatOfInt(3);
+        if (sourcePic1.contains("jpg")) {
 
-                    List<Mat> bgrPlanes = new ArrayList<>();
-                    Core.split(A, bgrPlanes);
+            Mat A = Imgcodecs.imread(sourcePic1);
+            Mat hist = new Mat(256, 1, CvType.CV_8UC1);
+            MatOfFloat ranges = new MatOfFloat(0, 256);
+            MatOfInt channels = new MatOfInt(3);
 
-                    Mat bHist = new Mat(), gHist = new Mat(), rHist = new Mat();
+            List<Mat> bgrPlanes = new ArrayList<>();
+            Core.split(A, bgrPlanes);
 
-                    Imgproc.calcHist(bgrPlanes, new MatOfInt(0), new Mat(), bHist, new MatOfInt(histSize), ranges, false);
-                    Imgproc.calcHist(bgrPlanes, new MatOfInt(1), new Mat(), gHist, new MatOfInt(histSize), ranges, false);
-                    Imgproc.calcHist(bgrPlanes, new MatOfInt(2), new Mat(), rHist, new MatOfInt(histSize), ranges, false);
+            Mat bHist = new Mat(), gHist = new Mat(), rHist = new Mat();
 
-                    //primul array este pentru blue, al doilea red, al 3-lea green
-                    histImage = drawColouredHistogram(bHist,gHist,rHist);
+            Imgproc.calcHist(bgrPlanes, new MatOfInt(0), new Mat(), bHist, new MatOfInt(histSize), ranges, false);
+            Imgproc.calcHist(bgrPlanes, new MatOfInt(1), new Mat(), gHist, new MatOfInt(histSize), ranges, false);
+            Imgproc.calcHist(bgrPlanes, new MatOfInt(2), new Mat(), rHist, new MatOfInt(histSize), ranges, false);
 
-                    if(k<listOfFiles.length-1) {
-                        floatArray[k] = colouredHelper(A);
-                        picsPdfAndName.put(fileEntry.getName(), floatArray[k]);
-                        k++;
-                    }
+            //primul array este pentru blue, al doilea red, al 3-lea green
+            histImage = drawColouredHistogram(bHist, gHist, rHist);
 
-                //    String pathResult = "C:\\forMaster\\temaDisertatie\\histogramePozeSimilare\\";
-                    String pathResult = "C:\\forMaster\\temaDisertatie\\histogramePozeNesimilare\\";
-                    pathResult = pathResult.concat(fileEntry.getName());
-                    Imgcodecs.imwrite(pathResult, histImage);
-                }
-            }
+            floatArray = colouredHelper(A);
+
+
+
+
+            Imgcodecs.imwrite(sourcePic1, histImage);
         }
-        return picsPdfAndName;
-    }
-    public static Map<Integer, String>convertMe(File folder){
-        File[] listOfFiles = folder.listFiles();
-        int i=0;
-        for (File fileEntry : listOfFiles) {
-            if (fileEntry.getAbsolutePath().contains("jpg")) {
-                helperConverterColouredScalesVal.put(i,fileEntry.getName());
-                i++;
-            }
-        }
-        return helperConverterColouredScalesVal;
+        return floatArray;
     }
 }

@@ -11,6 +11,9 @@ import static java.lang.Math.log10;
  */
 public class Algorithms {
 
+    public Algorithms() {
+    }
+
     static float[] R = new float[1228800];
     public static float euclidianL2(float P[], float Q[]){
         float dEuc = 0;
